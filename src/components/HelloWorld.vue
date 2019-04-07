@@ -12,6 +12,8 @@
       <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-eslint" target="_blank" rel="noopener">eslint</a></li>
     </ul>
     <h3>Essential Links</h3>
+    aaaaaaaaaaaaaaaa
+    <Button>primary</Button>
     <ul>
       <li><a href="https://vuejs.org" target="_blank" rel="noopener">Core Docs</a></li>
       <li><a href="https://forum.vuejs.org" target="_blank" rel="noopener">Forum</a></li>
@@ -31,7 +33,11 @@
 </template>
 
 <script>
+import { Button } from 'iview'
 export default {
+  components: {
+    Button
+  },
   name: 'HelloWorld',
   props: {
     msg: String
