@@ -1,29 +1,23 @@
-# justdoit_front
+# justdoit的前端
 
-## Project setup
+## 安装依赖
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### dev环境
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
+### 构建静态文件
 ```
 npm run build
 ```
-
-### Run your tests
+## 环境要求
 ```
-npm run test
+node：10  
+mpm：6.4.1  
+vue/cli-3  
+iview
 ```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
