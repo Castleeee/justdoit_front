@@ -13,7 +13,7 @@
     </ul>
     <h3>Essential Links</h3>
     aaaaaaaaaaaaaaaa
-    <Button>primary</Button>
+    <Button>prim啊ry</Button>
     <ul>
       <li><a href="https://vuejs.org" target="_blank" rel="noopener">Core Docs</a></li>
       <li><a href="https://forum.vuejs.org" target="_blank" rel="noopener">Forum</a></li>
@@ -33,10 +33,10 @@
 </template>
 
 <script>
-import { Button } from 'iview'
+// import { Button } from 'iview'
 export default {
   components: {
-    Button
+    // Button
   },
   name: 'HelloWorld',
   props: {
