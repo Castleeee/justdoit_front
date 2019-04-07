@@ -13,7 +13,7 @@
     </ul>
     <h3>Essential Links</h3>
     aaaaaaaaaaaaaaaa
-    <Button>prim啊ry</Button>
+    <Button v-on:click="getNewsList" >prim啊ry</Button>
     <ul>
       <li><a href="https://vuejs.org" target="_blank" rel="noopener">Core Docs</a></li>
       <li><a href="https://forum.vuejs.org" target="_blank" rel="noopener">Forum</a></li>
@@ -33,7 +33,7 @@
 </template>
 
 <script>
-// import { Button } from 'iview'
+
 export default {
   components: {
     // Button
@@ -41,6 +41,16 @@ export default {
   name: 'HelloWorld',
   props: {
     msg: String
+  },
+  methods: {
+    getNewsList () {
+      console.log('xxxxxxx')
+      this.axios.get('/getNewsList').then((response) => {
+        console.log(response)
+      }).catch((response) => {
+        console.log(response)
+      })
+    }
   }
 }
 </script>
