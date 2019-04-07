@@ -17,5 +17,7 @@ notifications:
     on_failure: always
 after_success:
 - chmod -R 600 ~/.ssh/id_rsa
-#- cat ~/.ssh/id_rsa
 - scp -o StrictHostKeyChecking=no -v -r ./dist/* travis@47.101.52.166:/usr/justdoit_front
+before_install:
+- openssl aes-256-cbc -K $encrypted_7bb8afe4e2a7_key -iv $encrypted_7bb8afe4e2a7_iv
+  -in id_rsa.enc -out ~\/.ssh/id_rsa -d
