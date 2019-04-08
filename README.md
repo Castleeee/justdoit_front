@@ -1,4 +1,5 @@
 # justdoit的前端
+[![](https://travis-ci.org/Castleeee/justdoit_front.svg?branch=master)](https://travis-ci.org/Castleeee/justdoit_front)
 
 ## 安装依赖
 ```
