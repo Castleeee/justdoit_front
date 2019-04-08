@@ -20,5 +20,8 @@ npm run build
 node：10  
 mpm：6.4.1  
 vue/cli-3  
-iview
+vue 3.5.0
+iview 3.3.1
+axios 0.18.0
+echarts 4
 ```
