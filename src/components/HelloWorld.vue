@@ -1,6 +1,8 @@
 <template>
   <div class="hello">
+
     <h1>{{ msg }}</h1>
+
     <p>
       For a guide and recipes on how to configure / customize this project,<br>
       check out the
@@ -13,6 +15,8 @@
     </ul>
     <h3>Essential Links</h3>
     aaaaaaaaaaaaaaaa
+    <div ><xxx></xxx></div>
+    <div ><Eecharts style="margin:0 auto"></Eecharts></div>
     <Button v-on:click="getNewsList" >prim啊ry</Button>
     <ul>
       <li><a href="https://vuejs.org" target="_blank" rel="noopener">Core Docs</a></li>
@@ -33,10 +37,12 @@
 </template>
 
 <script>
-
+import Eecharts from '@/components/charts.vue'
+import xxx from '@/components/xxx.vue'
 export default {
   components: {
-    // Button
+    Eecharts,
+    xxx
   },
   name: 'HelloWorld',
   props: {

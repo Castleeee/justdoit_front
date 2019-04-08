@@ -10,10 +10,12 @@
   "dependencies": {
     "axios": "^0.18.0",
     "core-js": "^2.6.5",
+    "echarts": "^4.2.1",
     "iview": "^3.0.1",
     "mockjs": "^1.0.1-beta3",
     "vue": "^2.6.6",
     "vue-axios": "^2.1.4",
+    "vue-echarts": "^4.0.1",
     "vue-router": "^3.0.1",
     "vuex": "^3.0.1"
   },

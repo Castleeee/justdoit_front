@@ -2,15 +2,22 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
+// 引入iview
 import './plugins/iview.js'
+// 添加axios
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 
-// 生产环境注释mock语句
+// 添加echarts
+import echarts from 'echarts'
+
+// 生产环境请注释mock语句
 import './mock/index.js'
+Vue.prototype.$echarts = echarts
 
 Vue.config.productionTip = false
 Vue.use(VueAxios, axios)
+
 new Vue({
   router,
   store,
