@@ -13,6 +13,7 @@ before_install:
 - chmod -R 600 ~/.ssh/id_rsa
 script:
 - npm run build
+- npm run docs:build
 notifications:
   email:
     recipients:
@@ -22,3 +23,4 @@ notifications:
 after_success:
 - chmod -R 600 ~/.ssh/id_rsa
 - scp -o StrictHostKeyChecking=no -v -r ./dist/* travis@47.101.52.166:/usr/justdoit_front
+- scp -o StrictHostKeyChecking=no -v -r docs/.vuepress/dist/* travis@47.101.52.166:/usr/helpdoc
