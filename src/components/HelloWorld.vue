@@ -26,6 +26,7 @@
       <li><a href="https://news.vuejs.org" target="_blank" rel="noopener">News</a></li>
     </ul>
     <h3>Ecosystem</h3>
+    <calendar-view></calendar-view>
     <ul>
       <li><a href="https://router.vuejs.org" target="_blank" rel="noopener">vue-router</a></li>
       <li><a href="https://vuex.vuejs.org" target="_blank" rel="noopener">vuex</a></li>
@@ -37,12 +38,14 @@
 </template>
 
 <script>
+import CalendarView from '@/components/calendar_view.vue'
 import Eecharts from '@/components/charts.vue'
 import xxx from '@/components/xxx.vue'
 export default {
   components: {
     Eecharts,
-    xxx
+    xxx,
+    CalendarView
   },
   name: 'HelloWorld',
   props: {
