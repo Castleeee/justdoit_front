@@ -14,6 +14,11 @@ var demoEvents = [
     end: '2019-07-27'
   },
   {
+    title: 'Sunny Out of Office',
+    start: '2019-04-25',
+    end: '2019-07-27'
+  },
+  {
     title: 'event1',
     start: '2019-04-01',
     cssClass: 'family',
