@@ -27,10 +27,13 @@
     </ul>
     <h3>Ecosystem</h3>
     <calendar-view></calendar-view>
+    <books bookpath='/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98%E7%AC%AC%E4%BA%8C%E7%AB%A0.ppt' bookname="xxx"></books>
+    <books bookpath="/%E7%AC%AC4%E7%AB%A0_%E5%88%86%E7%B1%BB%EF%BC%9A%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E3%80%81%E5%86%B3%E7%AD%96%E6%A0%91%E4%B8%8E%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0.ppt" bookname="ppt"></books>
+
     <ul>
       <li><a href="https://router.vuejs.org" target="_blank" rel="noopener">vue-router</a></li>
       <li><a href="https://vuex.vuejs.org" target="_blank" rel="noopener">vuex</a></li>
-      <li><a href="https://github.com/vuejs/vue-devtools#vue-devtools" target="_blank" rel="noopener">vue-devtools</a></li>
+      <li><a href="https://github.com/vuejs/  vue-devtools#vue-devtools" target="_blank" rel="noopener">vue-devtools</a></li>
       <li><a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener">vue-loader</a></li>
       <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
     </ul>
@@ -40,12 +43,14 @@
 <script>
 import CalendarView from '@/components/calendar_view.vue'
 import Eecharts from '@/components/charts.vue'
+import books from '@/components/books.vue'
 import xxx from '@/components/xxx.vue'
 export default {
   components: {
     Eecharts,
     xxx,
-    CalendarView
+    CalendarView,
+    books
   },
   name: 'HelloWorld',
   props: {
