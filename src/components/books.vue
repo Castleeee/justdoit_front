@@ -8,7 +8,7 @@ export default {
   props: ['bookpath', 'bookname'],
   methods: {
     getbook: function () {
-      var IpAddr = document.location.hostname
+      var IpAddr = window.document.location.hostname
       console.log(IpAddr + this.bookpath)
       return 'http://' + IpAddr + ':8888' + this.bookpath
     }
