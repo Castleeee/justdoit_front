@@ -1,47 +1,36 @@
 <template>
-  <div style="height: 960px">
-    <!--<img src="../assets/ocean-turtle.jpg" style='height: 100%;width:100%;'>-->
-    <Card style="margin: 5% auto;height: 60%;width:40%;">
-      <p slot="title"
-         v-if="singup" >
-        注册
-      </p>
-      <p slot="title"
-         v-else>
-        登录
-      </p>
-      <div>
-        <Button v-show="singup">登录</Button>
-        <Button @click="switchsing">注册</Button>
-
+    <div class="my">
+      <div :style=bg_img
+      class="my">
+      <login-card style="padding-top: 5%"></login-card>
       </div>
-
-    </Card>
-  </div>
+    </div>
 </template>
 
 <script>
+import loginCard from '@/components/loginCard.vue'
 export default {
-
-  name: 'login',
+  components: {
+    loginCard
+  },
+  name: 'Login',
   data () {
     return {
-      singup: true
-    }
-  },
-  methods: {
-    switchsing () {
-      this.singup = false
+
+      bg_img: {
+        backgroundImage: 'url(' + require('../assets/mountain.jpg') + ') ',
+        backgroundPosition: 'center center',
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'cover'
+
+      }
     }
   }
 }
 </script>
 
 <style scoped>
-#loginbackground{
-  margin-bottom: 0px;
+.my{
   height: 100%;
-  width: 100%;
-  background: url("../assets/ocean-turtle.jpg");
 }
 </style>
