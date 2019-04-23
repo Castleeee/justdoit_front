@@ -7,6 +7,7 @@
       For a guide and recipes on how to configure / customize this project,<br>
       check out the
       <a href="https://cli.vuejs.org" target="_blank" rel="noopener">vue-cli documentation</a>.
+      <router-link to="gologin">aaaa</router-link>
     </p>
     <h3>Installed CLI Plugins</h3>
     <ul>
@@ -18,6 +19,7 @@
     <div ><xxx></xxx></div>
     <div ><Eecharts style="margin:0 auto"></Eecharts></div>
     <Button v-on:click="getNewsList" >prim啊ry</Button>
+    <Button v-on:click="gologin" >xxxxxx</Button>
     <ul>
       <li><a href="https://vuejs.org" target="_blank" rel="noopener">Core Docs</a></li>
       <li><a href="https://forum.vuejs.org" target="_blank" rel="noopener">Forum</a></li>
@@ -27,9 +29,6 @@
     </ul>
     <h3>Ecosystem</h3>
     <calendar-view></calendar-view>
-    <books bookpath='/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98%E7%AC%AC%E4%BA%8C%E7%AB%A0.ppt' bookname="xxx"></books>
-    <books bookpath="/%E7%AC%AC4%E7%AB%A0_%E5%88%86%E7%B1%BB%EF%BC%9A%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E3%80%81%E5%86%B3%E7%AD%96%E6%A0%91%E4%B8%8E%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0.ppt" bookname="ppt"></books>
-
     <ul>
       <li><a href="https://router.vuejs.org" target="_blank" rel="noopener">vue-router</a></li>
       <li><a href="https://vuex.vuejs.org" target="_blank" rel="noopener">vuex</a></li>
@@ -43,20 +42,22 @@
 <script>
 import CalendarView from '@/components/calendar_view.vue'
 import Eecharts from '@/components/charts.vue'
-import books from '@/components/books.vue'
 import xxx from '@/components/xxx.vue'
 export default {
   components: {
     Eecharts,
     xxx,
-    CalendarView,
-    books
+    CalendarView
+
   },
   name: 'HelloWorld',
   props: {
     msg: String
   },
   methods: {
+    gologin () {
+      this.$router.push({ path: '/Login' })
+    },
     getNewsList () {
       console.log('xxxxxxx')
       this.axios.get('/getNewsList').then((response) => {
