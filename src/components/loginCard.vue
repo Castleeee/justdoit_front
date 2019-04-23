@@ -31,9 +31,9 @@
                v-model="passwd"
                placeholder="密码"/>
       </label>
-      <br/>
-      <br/>
-      <br/>
+      <br v-if="singup" />
+      <br v-if="singup" />
+      <br v-if="singup" />
       <label v-if="singup">确认:
         <Input
                size="large"
@@ -41,9 +41,9 @@
                v-model="repasswd"
                placeholder="再次输入密码" />
       </label>
-      <br/>
-      <br/>
-      <br/>
+      <br v-if="singup" />
+      <br v-if="singup" />
+      <br v-if="singup" />
       <label v-if="singup">邮箱:
         <Input size="large"
                style="width: 72%;"
