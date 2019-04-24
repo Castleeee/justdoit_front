@@ -14,7 +14,9 @@ import {
   Footer,
   Layout,
   MenuGroup,
-  Avatar
+  Avatar,
+  BreadcrumbItem,
+  Breadcrumb
 } from 'iview'
 
 import 'iview/dist/styles/iview.css'
@@ -34,3 +36,5 @@ Vue.component('Input', Input)
 Vue.component('Layout', Layout)
 Vue.component('MenuGroup', MenuGroup)
 Vue.component('Avatar', Avatar)
+Vue.component('BreadcrumbItem', BreadcrumbItem)
+Vue.component('Breadcrumb', Breadcrumb)
