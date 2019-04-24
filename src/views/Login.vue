@@ -16,7 +16,6 @@ export default {
   name: 'Login',
   data () {
     return {
-
       bg_img: {
         backgroundImage: 'url(' + require('../assets/mountain.jpg') + ') ',
         backgroundPosition: 'center center',

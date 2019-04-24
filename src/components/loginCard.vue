@@ -17,6 +17,7 @@
       <br/> <br/> <br/>
 
       <label>账户:
+
         <Input size="large"
                style="width: 72%;"
                v-model="usernumber"
@@ -105,6 +106,7 @@ export default {
     },
     doLogin () { // 登陆逻辑
       console.log('Login')
+      this.$router.push({ path: '/', params: { token: 'xxxxx' } })
     },
     doRegeist () { // 注册逻辑
       if (this.passwd !== this.repasswd) { // 判断确认密码和密码是否一样
