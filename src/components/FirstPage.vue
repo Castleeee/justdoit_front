@@ -6,7 +6,7 @@
           <img class="layout-logo" src="../assets/logo.png"/>
           <div class="layout-nav" style="width: 60%">
             <MenuItem name="5">
-              <Input v-model="ppp" placeholder="搜索你的todo" style="width: 300px" /><I style="-webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none;">&nbsp;&nbsp;</I>
+              <Input v-model="searchword" placeholder="搜索你的todo" style="width: 300px" /><I style="-webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none;">&nbsp;&nbsp;</I>
               <Button type="primary" shape="circle" icon="ios-search"></Button>
             </MenuItem>
 
@@ -87,7 +87,15 @@
 </template>
 <script>
 export default {
-  name: 'FirstPage'
+  name: 'FirstPage',
+  data () {
+    return {
+      searchword: ''
+    }
+  },
+  methods: {
+
+  }
 }
 </script>
 <style scoped>
