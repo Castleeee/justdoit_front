@@ -1,8 +1,8 @@
 <template>
   <div class="home">
     <Row style="height: 80%;">
-      <Col span="12">col-12</Col>
-      <Col span="12">col-12</Col>
+      <Col span="12"><img class="logo" src="../assets/paper-plane.svg" alt=" ：）"/></Col>
+      <Col span="12"><Button @click="goinfo">xxxxx</Button></Col>
     </Row>
     <br/>
     <Row>
@@ -23,13 +23,16 @@
 </template>
 
 <script>
-// @ is an alias to /src
-// import FirstPage from '@/components/FirstPage.vue'
+
 export default {
-  name: 'home'
-  // components: {
-  //   FirstPage
-  // }
+  name: 'home',
+  components: {
+  },
+  methods: {
+    goinfo () {
+      this.$router.push({ path: '/todo', name: 'todo' })
+    }
+  }
 }
 </script>
 <style scoped>

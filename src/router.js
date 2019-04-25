@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
 import Login from './views/Login.vue'
+import FirstPage from './components/FirstPage.vue'
 Vue.use(Router)
 
 export default new Router({
@@ -16,6 +17,11 @@ export default new Router({
       path: '/Login',
       name: 'login',
       component: Login
+    },
+    {
+      path: '/todo',
+      name: 'todo',
+      component: FirstPage
     },
     {
       path: '/about',
