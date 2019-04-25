@@ -18,7 +18,7 @@ export default {
     return {
       bg_img: {
         backgroundImage: 'url(' + require('../assets/mountain.jpg') + ') ',
-        backgroundPosition: 'center center',
+        backgroundPosition: 'right right',
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'cover'
 

@@ -108,8 +108,7 @@ export default {
   methods: {
     goPush (name) {
     // console.log(name)
-
-      this.$router.push({ path: '/' + name })
+      if (['login', 'more1', 'more2', 'more3', 'more4', 'more5', 'infoStream'].indexOf(name) !== -1) { this.$router.push({ path: '/' + name }) } else { console.log(name) }
     }
   }
 }
