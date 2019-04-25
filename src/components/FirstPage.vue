@@ -3,9 +3,9 @@
     <Layout style="height: 100%">
       <Header style="background:#ffffff;" >
         <Menu mode="horizontal" theme="light" active-name="1" @on-select="goPush">
-          <img class="layout-logo" src="../assets/logo.png" alt=" ：）"/>
+          <img class="layout-logo" src="../assets/paper-plane.svg" alt=" ：）"/>
           <div class="layout-nav" style="width: 60%" >
-            <MenuItem name="5" >
+            <MenuItem >
               <Input v-model="searchword" placeholder="搜索你的todo" style="width: 300px" /><I style="-webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none;">&nbsp;&nbsp;</I>
               <Button type="primary" shape="circle" icon="ios-search" ></Button>
             </MenuItem>
