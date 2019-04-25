@@ -1,6 +1,23 @@
 <template>
   <div class="home">
-    <img class="logo" src="../assets/paper-plane.svg" alt=" ：）"/>
+    <Row style="height: 80%;">
+      <Col span="12">col-12</Col>
+      <Col span="12">col-12</Col>
+    </Row>
+    <br/>
+    <Row>
+      <Col span="8">col-8</Col>
+      <Col span="8">col-8</Col>
+      <Col span="8">col-8</Col>
+    </Row>
+    <br/>
+    <Row>
+      <Col span="6">col-6</Col>
+      <Col span="6">col-6</Col>
+      <Col span="6">col-6</Col>
+      <Col span="6">col-6</Col>
+    </Row>
+
     <!--<FirstPage />-->
   </div>
 </template>

@@ -16,7 +16,11 @@ import {
   MenuGroup,
   Avatar,
   BreadcrumbItem,
-  Breadcrumb
+  Breadcrumb,
+  Grid,
+  Row,
+  Col
+
 } from 'iview'
 
 import 'iview/dist/styles/iview.css'
@@ -38,3 +42,6 @@ Vue.component('MenuGroup', MenuGroup)
 Vue.component('Avatar', Avatar)
 Vue.component('BreadcrumbItem', BreadcrumbItem)
 Vue.component('Breadcrumb', Breadcrumb)
+Vue.component('Grid', Grid)
+Vue.component('Row', Row)
+Vue.component('Col', Col)
