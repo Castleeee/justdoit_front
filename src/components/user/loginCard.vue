@@ -2,7 +2,7 @@
   <div>
     <Card style="height:7%;width:40%;margin:auto;">
       <div
-        v-if="singup"
+        v-if="signup"
         style="height: 10%;font-size: 20px">
         注册
 
@@ -32,20 +32,20 @@
                v-model="passwd"
                placeholder="密码"/>
       </label>
-      <br v-if="singup" />
-      <br v-if="singup" />
-      <br v-if="singup" />
-      <label v-if="singup">确认:
+      <br v-if="signup" />
+      <br v-if="signup" />
+      <br v-if="signup" />
+      <label v-if="signup">确认:
         <Input
                size="large"
                style="width: 72%;"
                v-model="repasswd"
                placeholder="再次输入密码" />
       </label>
-      <br v-if="singup" />
-      <br v-if="singup" />
-      <br v-if="singup" />
-      <label v-if="singup">邮箱:
+      <br v-if="signup" />
+      <br v-if="signup" />
+      <br v-if="signup" />
+      <label v-if="signup">邮箱:
         <Input size="large"
                style="width: 72%;"
                v-model="emali"
@@ -55,15 +55,15 @@
       <br/>
       <br/>
       <br/>
-<!-- 上面是表单，根据singup的值变化判断是登陆还是注册 -->
+<!-- 上面是表单，根据signup的值变化判断是登陆还是注册 -->
       <div style="margin-bottom: 7%;"
-           v-if="singup">
+           v-if="signup">
         <Button style="width: 60%"
                 type="success"
                 @click="doRegeist">注册
         </Button>
         <br><br>
-        <Button @click="switchsing"
+        <Button @click="switchsign"
                 style="width: 60%"
                 type="warning">返回
         </Button>
@@ -75,12 +75,13 @@
                 @click="doLogin">登录
         </Button>
         <br><br>
-        <Button @click="switchsing"
+        <Button @click="switchsign"
                 style="width: 60%"
                 type="success">注册
         </Button>
       </div>
 <!-- 上面是按钮，切换登陆状态执行逻辑 -->
+
     </Card>
 
   </div>
@@ -97,15 +98,17 @@ export default {
       passwd: '', // 密码
       repasswd: '', // 确认密码
       emali: '', // 邮箱
-      singup: true, // 是否为注册
-      equal: true
+      signup: true, // 是否为注册
+      equal: true,
+      findback: false
 
     }
   },
   methods: {
-    switchsing () { // 切换注册还是登录
-      this.singup = !this.singup
+    switchsign () { // 切换注册还是登录
+      this.signup = !this.signup
     },
+
     doLogin () { // 登陆逻辑
       console.log('Login')
       this.$router.push({ path: '/', params: { token: 'xxxxx' } })

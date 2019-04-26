@@ -19,7 +19,8 @@ import {
   Breadcrumb,
   Row,
   Col,
-  Notice
+  Notice,
+  Tooltip
 
 } from 'iview'
 
@@ -44,4 +45,5 @@ Vue.component('BreadcrumbItem', BreadcrumbItem)
 Vue.component('Breadcrumb', Breadcrumb)
 Vue.component('Row', Row)
 Vue.component('Col', Col)
+Vue.component('Tooltip', Tooltip)
 Vue.prototype.$Notice = Notice
