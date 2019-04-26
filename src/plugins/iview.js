@@ -17,7 +17,6 @@ import {
   Avatar,
   BreadcrumbItem,
   Breadcrumb,
-  Grid,
   Row,
   Col
 
@@ -42,6 +41,6 @@ Vue.component('MenuGroup', MenuGroup)
 Vue.component('Avatar', Avatar)
 Vue.component('BreadcrumbItem', BreadcrumbItem)
 Vue.component('Breadcrumb', Breadcrumb)
-Vue.component('Grid', Grid)
+
 Vue.component('Row', Row)
 Vue.component('Col', Col)
