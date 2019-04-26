@@ -7,6 +7,8 @@ import './plugins/iview.js'
 // 添加axios
 import axios from 'axios'
 import VueAxios from 'vue-axios'
+// 添加动效
+import 'vue2-animate/dist/vue2-animate.min.css'
 
 // 添加echarts
 import echarts from 'echarts'
