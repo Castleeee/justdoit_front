@@ -148,7 +148,7 @@
         <Button icon='md-contact' class="buttoncenter" shape="circle" to="/login">账户</Button>
       </Col>
       <Col span="2" v-if="isWordPage" >
-        <Button icon='logo-android' class="buttoncenter" shape="circle" @click="goouter('http:///www.baidu.com')">手机APP</Button>
+        <Button icon='logo-android' class="buttoncenter" shape="circle" @click="goinner('/appdown')">手机APP</Button>
       </Col>
       <Col span="2" v-if="isWordPage" >&nbsp;</Col>
       <!-- 单词页渲染 -->
@@ -162,7 +162,7 @@
         <Button icon='md-contact' class="buttoncenter" shape="circle" to="/login">账户</Button>
       </Col>
       <Col span="2" v-if="isTodoPage" >
-        <Button icon='logo-android' class="buttoncenter" shape="circle" @click="goouter('http:///www.baidu.com')">手机APP</Button>
+        <Button icon='logo-android' class="buttoncenter" shape="circle" @click="goinner('/appdown')">手机APP</Button>
       </Col>
       <Col span="2" v-if="isWordPage" >&nbsp;</Col>
       <!-- todo页渲染 -->
@@ -176,7 +176,7 @@
         <Button icon='md-contact' class="buttoncenter" shape="circle" to="/login">账户</Button>
       </Col>
       <Col span="2" v-if="isInfoPage" >
-        <Button icon='logo-android' class="buttoncenter" shape="circle" @click="goouter('http:///www.baidu.com')" >手机APP</Button>
+        <Button icon='logo-android' class="buttoncenter" shape="circle" @click="goinner('/appdown')" >手机APP</Button>
       </Col>
       <Col span="2" v-if="isWordPage" >&nbsp;</Col>
       <!-- 信息页渲染 -->

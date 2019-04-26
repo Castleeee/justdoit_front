@@ -2,16 +2,21 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
 
+import appDownload from './components/appDownload.vue'
+
 import Login from './components/user/Login.vue'
 
 import todoMain from './components/todo/todoMain.vue'
 import todoToday from './components/todo/todoToday.vue'
+import todoChart from './components/todo/todoChart.vue'
 
 import wordMain from './components/word/wordMain.vue'
 import wordToday from './components/word/wordToday.vue'
+import wordMine from './components/word/wordMine'
 
 import infoMain from './components/infostream/infoMain.vue'
 import infoToday from './components/infostream/infoToday.vue'
+import infoCustom from './components/infostream/infoCustom.vue'
 
 Vue.use(Router)
 
@@ -33,9 +38,9 @@ export default new Router({
     {
       path: '/user',
       name: 'user',
-      component: Login
+      component: Login // todo 用户资料中心
     },
-    // todo 相关路由
+    // todo相关路由
     //
     {
       path: '/todo',
@@ -47,6 +52,11 @@ export default new Router({
       name: 'todo',
       component: todoToday
     },
+    {
+      path: '/todo/chart',
+      name: 'todoChart',
+      component: todoChart
+    },
     // word 相关路由
     //
     {
@@ -56,8 +66,13 @@ export default new Router({
     },
     {
       path: '/word/today',
-      name: 'word',
+      name: 'wordToday',
       component: wordToday
+    },
+    {
+      path: '/word/mine',
+      name: 'wordMine',
+      component: wordMine
     },
     // info 相关路由
     //
@@ -68,11 +83,21 @@ export default new Router({
     },
     {
       path: '/info/today',
-      name: 'info',
+      name: 'infoToday',
       component: infoToday
+    },
+    {
+      path: '/info/custom',
+      name: 'custom',
+      component: infoCustom
     },
     // 其他路由
     //
+    {
+      path: '/appdown',
+      name: 'appDownload',
+      component: appDownload
+    },
     {
       path: '/about',
       name: 'about',
