@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
-import Login from './views/Login.vue'
-import FirstPage from './components/FirstPage.vue'
+import Login from './components/user/Login.vue'
+import FirstPage from './components/todo/TodoMain.vue'
 Vue.use(Router)
 
 export default new Router({

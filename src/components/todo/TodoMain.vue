@@ -3,7 +3,7 @@
     <Layout style="height: 100%">
       <Header style="background:#ffffff;" >
         <Menu mode="horizontal" theme="light" active-name="1" @on-select="goPush">
-          <img class="layout-logo" src="../assets/paper-plane.svg" alt=" ：）"/>
+          <img class="layout-logo" src="../../assets/all/paper-plane.svg" alt=" ：）"/>
           <div class="layout-nav" style="width: 60%" >
             <MenuItem >
               <Input v-model="searchword" placeholder="搜索你的todo" style="width: 300px" /><I style="-webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none;">&nbsp;&nbsp;</I>
@@ -117,7 +117,7 @@ export default {
   .layout{
     height: 100%;
     border: 1px solid #d7dde4;
-    background:url("../assets/mountain.jpg");
+    background:url("../../assets/user/mountain.jpg");
     position: relative;
     border-radius: 4px;
     overflow: hidden;
@@ -136,7 +136,5 @@ export default {
     margin: 0 auto;
     margin-right: 20px;
   }
-  .layout-footer-center{
-    text-align: center;
-  }
+
 </style>

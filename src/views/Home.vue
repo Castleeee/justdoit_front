@@ -5,7 +5,7 @@
 
     <Row type="flex" align="middle" style="height: 18%" >
       <Col span="1">&nbsp;</Col>
-      <Col span="1"><img class="logo" src="../assets/paper-plane.svg" alt=" ：）" /></Col>
+      <Col span="1"><img class="logo" src="../assets/all/paper-plane.svg" alt=" ：）" /></Col>
       <Col span="1">&nbsp;</Col>
       <Col span="4"><B  style="color:#2b85e4;font-size: 39px" class="hrefTexe">Just Do It</B></Col>
       <Col span="5">&nbsp;</Col>
@@ -252,7 +252,7 @@ export default {
 
     height: 100%;
     width: 100%;
-    background:url("../assets/home1.svg") no-repeat right center;
+    background:url("../assets/all/home1.svg") no-repeat right center;
 
   }
 
@@ -260,28 +260,28 @@ export default {
 
     height: 100%;
     width: 100%;
-    background:url("../assets/word.svg") no-repeat right center;
+    background:url("../assets/word/word.svg") no-repeat right center;
 
   }
   .todo{
 
     height: 100%;
     width: 100%;
-    background:url("../assets/todo.svg") no-repeat right center;
+    background:url("../assets/todo/todo.svg") no-repeat right center;
 
   }
   .info{
 
     height: 100%;
     width: 100%;
-    background:url("../assets/info.svg") no-repeat right center;
+    background:url("../assets/info/info.svg") no-repeat right center;
 
   }
   .home2{
 
     height: 100%;
     width: 100%;
-    background:url("../assets/home2.svg") no-repeat left bottom;
+    background:url("../assets/all/home2.svg") no-repeat left bottom;
     background-size: 22%;
   }
   .logo{

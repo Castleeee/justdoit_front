@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import loginCard from '@/components/loginCard.vue'
+import loginCard from '@/components/user/loginCard.vue'
 export default {
   components: {
     loginCard
@@ -17,7 +17,7 @@ export default {
   data () {
     return {
       bg_img: {
-        backgroundImage: 'url(' + require('../assets/mountain.jpg') + ') ',
+        backgroundImage: 'url(' + require('../../assets/user/mountain.jpg') + ') ',
         backgroundPosition: 'right right',
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'cover'
