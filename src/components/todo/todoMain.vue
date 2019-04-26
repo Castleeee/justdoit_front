@@ -98,7 +98,7 @@
 </template>
 <script>
 export default {
-  name: 'FirstPage',
+  name: 'todoMain',
   data () {
     return {
       searchword: '',
