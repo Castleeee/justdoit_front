@@ -85,8 +85,8 @@
   </template>
   </transition>
   <transition
-    name="slide-fade">
-    <!--name="zoom">-->
+    name="zoom">
+
   <template v-if="isWordPage" >
     <div style="width: 100%;height: 100%;">
       <div class="word">
@@ -171,8 +171,8 @@
   </template>
 </transition>
     <transition
-    name="slide-fade">
-    <!--name="zoom">-->
+    name="zoom">
+
   <template v-if="isTodoPage">
     <div style="width: 100%;height: 100%;">
       <div class="todo">
@@ -257,8 +257,8 @@
   </template>
 </transition>
     <transition
-    name="slide-fade">
-    <!--name="zoom">-->
+    name="zoom">
+
   <template v-if="isInfoPage">
     <div style="width: 100%;height: 100%;">
       <div class="info">
