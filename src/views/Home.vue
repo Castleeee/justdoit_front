@@ -107,22 +107,22 @@
     <Row type="flex" align="bottom" style="height: 40%">
       <Col span="1">&nbsp;</Col>
       <!--首页渲染-->
-      <Col span="8" class="centertext" v-if="isHomePage" >🌌没想好写什么<br/>不过呢<br/>这排版随便写也很帅</Col>
+      <Col span="10" class="centertext" v-if="isHomePage" >没想好写什么<br/>不过呢🌌<br/>这排版随便写也很帅</Col>
       <!--首页渲染-->
 
       <!--单词页渲染-->
-      <Col span="8" class="centertext" v-if="isWordPage" >专注，大于一切<br/>化繁为简，唯有单词</Col>
+      <Col span="10" class="centertext" v-if="isWordPage" >Focus on Less<br/>We only have Words</Col>
       <!--单词页渲染-->
 
       <!--todo页渲染-->
-      <Col span="8" class="centertext" v-if="isTodoPage" >If not Now,When ?<br/>If not you,Who ?</Col>
+      <Col span="10" class="centertext" v-if="isTodoPage" >If not Now,When ?<br/>If not you,Who ?</Col>
       <!--todo页渲染-->
 
       <!--info页渲染-->
-      <Col span="8" class="centertext" v-if="isInfoPage" >🍺来杯啤酒吧<br/>你想要的，一应俱全<br/></Col>
+      <Col span="10" class="centertext" v-if="isInfoPage" >🍺来杯啤酒吧<br/>你想要的，一应俱全<br/></Col>
       <!--info页渲染-->
 
-      <Col span="8">&nbsp;</Col>
+      <Col span="6">&nbsp;</Col>
       <Col span="8">&nbsp;</Col>
     </Row>
     <br/>
@@ -318,7 +318,7 @@ export default {
   }
   .centertext{
     text-align: left;
-    color: #05297f;
+    color: #2d8cf0;
     font-size: 50px;
   }
 </style>
