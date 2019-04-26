@@ -82,6 +82,7 @@
       </div>
 <!-- 上面是按钮，切换登陆状态执行逻辑 -->
     </Card>
+
   </div>
 
 </template>
@@ -96,7 +97,8 @@ export default {
       passwd: '', // 密码
       repasswd: '', // 确认密码
       emali: '', // 邮箱
-      singup: true// 是否为注册
+      singup: true, // 是否为注册
+      equal: true
 
     }
   },
@@ -110,7 +112,10 @@ export default {
     },
     doRegeist () { // 注册逻辑
       if (this.passwd !== this.repasswd) { // 判断确认密码和密码是否一样
-        alert('两次输入密码不一致！')
+        this.$Notice.error({
+          title: '\n\n&nbsp;\n&nbsp;',
+          desc: '两次输入密码不一致！'
+        })
       }
       console.log('Regeist')
     }

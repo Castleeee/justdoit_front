@@ -43,11 +43,13 @@
           style="color:#2b85e4;cursor: pointer"
           class="hrefTexe">Home</B></Col>
       <Col span="2" v-if="isWordPage">
-        <B style="color:#2b85e4;cursor: pointer"
+        <B @click= "goinner('/word/today')"
+          style="color:#2b85e4;cursor: pointer"
           class="hrefTexe">今日单词</B>
       </Col>
       <Col span="2" v-if="isWordPage">
-        <B style="color:#2b85e4;cursor: pointer"
+        <B @click= "goinner('/word/mine')"
+          style="color:#2b85e4;cursor: pointer"
           class="hrefTexe">管理我的</B>
       </Col>
 
@@ -62,12 +64,14 @@
           style="color:#2b85e4;cursor: pointer"
           class="hrefTexe">Home</B></Col>
       <Col span="2" v-if="isTodoPage">
-        <B style="color:#2b85e4;cursor: pointer"
+        <B @click= "goinner('/todo/today')"
+          style="color:#2b85e4;cursor: pointer"
           class="hrefTexe">今日待办</B>
       </Col>
       <Col span="2" v-if="isTodoPage">
-        <B style="color:#2b85e4;cursor: pointer"
-          class="hrefTexe">统计报表</B>
+        <B @click= "goinner('/todo/chart')"
+          style="color:#2b85e4;cursor: pointer"
+          class="hrefTexe" >统计报表</B>
       </Col>
 
       <!--todo页渲染-->
@@ -82,12 +86,12 @@
           style="color:#2b85e4;cursor: pointer"
           class="hrefTexe">Home</B></Col>
       <Col span="2" v-if="isInfoPage">
-        <B
+        <B @click="goinner('/info/today')"
           style="color:#2b85e4;cursor: pointer"
           class="hrefTexe">今日信息</B>
       </Col>
       <Col span="2" v-if="isInfoPage">
-        <B
+        <B @click="goinner('/info/custom')"
           style="color:#2b85e4;cursor: pointer"
           class="hrefTexe">定制信息流</B>
       </Col>
@@ -95,7 +99,7 @@
       <!--信息流页渲染-->
 
       <Col span="3">
-        <Button  class="button" type="primary" shape="circle"  @click="gologin">
+        <Button  class="button" type="primary" shape="circle"  to="/login">
           <B class="buttontext">Sing in</B></Button></Col>
       <Col span="1"></Col>
     </Row>
@@ -128,23 +132,23 @@
       <Col span="2" v-if="isHomePage" >
         <Button icon='md-contact' class="buttoncenter" type="primary" shape="circle" to="/login">登录</Button></Col>
       <Col span="2" v-if="isHomePage" >
-        <Button icon='ios-hammer' class="buttoncenter" shape="circle" to="http:///www.ooowl.fun">作者的blog</Button></Col>
+        <Button icon='ios-hammer' class="buttoncenter" shape="circle" @click="goouter('http:///www.ooowl.fun')">作者的blog</Button></Col>
       <Col span="2" v-if="isHomePage" >
-        <Button icon='md-bookmarks' class="buttoncenter" shape="circle" to="http:///www.ooowl.fun:82">使用说明</Button></Col>
+        <Button icon='md-bookmarks' class="buttoncenter" shape="circle" @click="goouter('http:///www.ooowl.fun:82')">使用说明</Button></Col>
       <Col span="2" v-if="isHomePage" >
-        <Button icon='logo-github' class="buttoncenter" shape="circle" to="https:///github.com/Castleeee/justdoit_front">github</Button></Col>
+        <Button icon='logo-github' class="buttoncenter" shape="circle" @click="goouter('https:///github.com/Castleeee/justdoit_front')">github</Button></Col>
       <!-- 首页渲染 -->
 
       <!-- 单词页渲染 -->
 
       <Col span="2" v-if="isWordPage" >
-        <Button icon="ios-book" class="buttoncenter" type="primary" shape="circle" to="/login">开始使用</Button>
+        <Button icon="ios-book" class="buttoncenter" type="primary" shape="circle" to="/word">开始使用</Button>
       </Col>
       <Col span="2" v-if="isWordPage" >
-        <Button icon='md-contact' class="buttoncenter" shape="circle" to="http:///www.ooowl.fun">账户</Button>
+        <Button icon='md-contact' class="buttoncenter" shape="circle" to="/login">账户</Button>
       </Col>
       <Col span="2" v-if="isWordPage" >
-        <Button icon='logo-android' class="buttoncenter" shape="circle" to="http:///www.ooowl.fun">手机APP</Button>
+        <Button icon='logo-android' class="buttoncenter" shape="circle" @click="goouter('http:///www.baidu.com')">手机APP</Button>
       </Col>
       <Col span="2" v-if="isWordPage" >&nbsp;</Col>
       <!-- 单词页渲染 -->
@@ -152,13 +156,13 @@
       <!-- todo页渲染 -->
 
       <Col span="2" v-if="isTodoPage" >
-        <Button icon='md-checkbox' class="buttoncenter" type="primary" shape="circle" to="/login">开始使用</Button>
+        <Button icon='md-checkbox' class="buttoncenter" type="primary" shape="circle" to="/todo">开始使用</Button>
       </Col>
       <Col span="2" v-if="isTodoPage" >
-        <Button icon='md-contact' class="buttoncenter" shape="circle" to="http:///www.ooowl.fun">账户</Button>
+        <Button icon='md-contact' class="buttoncenter" shape="circle" to="/login">账户</Button>
       </Col>
       <Col span="2" v-if="isTodoPage" >
-        <Button icon='logo-android' class="buttoncenter" shape="circle" to="http:///www.ooowl.fun">手机APP</Button>
+        <Button icon='logo-android' class="buttoncenter" shape="circle" @click="goouter('http:///www.baidu.com')">手机APP</Button>
       </Col>
       <Col span="2" v-if="isWordPage" >&nbsp;</Col>
       <!-- todo页渲染 -->
@@ -166,13 +170,13 @@
       <!-- 信息页渲染 -->
 
       <Col span="2" v-if="isInfoPage" >
-        <Button icon="md-beer" class="buttoncenter" type="primary" shape="circle" to="/login">开始使用</Button>
+        <Button icon="md-beer" class="buttoncenter" type="primary" shape="circle" to="/info">开始使用</Button>
       </Col>
       <Col span="2" v-if="isInfoPage" >
-        <Button icon='md-contact' class="buttoncenter" shape="circle" to="http:///www.ooowl.fun">账户</Button>
+        <Button icon='md-contact' class="buttoncenter" shape="circle" to="/login">账户</Button>
       </Col>
       <Col span="2" v-if="isInfoPage" >
-        <Button icon='logo-android' class="buttoncenter" shape="circle" to="http:///www.ooowl.fun">手机APP</Button>
+        <Button icon='logo-android' class="buttoncenter" shape="circle" @click="goouter('http:///www.baidu.com')" >手机APP</Button>
       </Col>
       <Col span="2" v-if="isWordPage" >&nbsp;</Col>
       <!-- 信息页渲染 -->
@@ -234,10 +238,12 @@ export default {
         this.isInfoPage = true
       }
     },
-    gologin () {
-      this.$router.push({ path: '/login', name: 'login' })
+    goouter (e) {
+      window.location.href = e
+    },
+    goinner (e) {
+      this.$router.push({ path: e })
     }
-
   }
 }
 </script>

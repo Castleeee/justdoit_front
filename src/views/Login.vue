@@ -1,7 +1,7 @@
 <template>
-    <div class="my">
+    <div class="full">
       <div :style=bg_img
-      class="my">
+      class="full">
       <login-card style="padding-top: 5%"></login-card>
       </div>
     </div>
@@ -29,7 +29,7 @@ export default {
 </script>
 
 <style scoped>
-.my{
+.full{
   height: 100%;
 }
 </style>

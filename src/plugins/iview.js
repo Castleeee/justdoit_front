@@ -18,7 +18,8 @@ import {
   BreadcrumbItem,
   Breadcrumb,
   Row,
-  Col
+  Col,
+  Notice
 
 } from 'iview'
 
@@ -41,6 +42,6 @@ Vue.component('MenuGroup', MenuGroup)
 Vue.component('Avatar', Avatar)
 Vue.component('BreadcrumbItem', BreadcrumbItem)
 Vue.component('Breadcrumb', Breadcrumb)
-
 Vue.component('Row', Row)
 Vue.component('Col', Col)
+Vue.prototype.$Notice = Notice

@@ -5,12 +5,11 @@
 </template>
 
 <script>
-// import HelloWorld from './components/FirstPage.vue'
 
 export default {
   name: 'app',
   components: {
-    // HelloWorld
+
   }
 }
 </script>
