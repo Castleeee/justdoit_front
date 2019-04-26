@@ -50,7 +50,7 @@
       <Col span="2" v-if="isWordPage">
         <B @click= "goinner('/word/mine')"
           style="color:#2b85e4;cursor: pointer"
-          class="hrefTexe">管理我的</B>
+          class="hrefTexe">管理词库</B>
       </Col>
 
       <!--单词页渲染-->
@@ -107,19 +107,19 @@
     <Row type="flex" align="bottom" style="height: 40%">
       <Col span="1">&nbsp;</Col>
       <!--首页渲染-->
-      <Col span="8" v-if="isHomePage" >aaaaaaaaaa<br/>aaaaaaaaa<br/>aaaaaaaaaaaaaaaaaaaaa</Col>
+      <Col span="8" class="centertext" v-if="isHomePage" >🌌没想好写什么<br/>不过呢<br/>这排版随便写也很帅</Col>
       <!--首页渲染-->
 
       <!--单词页渲染-->
-      <Col span="8" v-if="isWordPage" >bbbbbbbbbb<br/>bbbbbbbbb<br/>bbbbbbbbbbbbbbbbbbbbb</Col>
+      <Col span="8" class="centertext" v-if="isWordPage" >专注，大于一切<br/>化繁为简，唯有单词</Col>
       <!--单词页渲染-->
 
       <!--todo页渲染-->
-      <Col span="8" v-if="isTodoPage" >cccccccccc<br/>ccccccccc<br/>ccccccccccccccccccccc</Col>
+      <Col span="8" class="centertext" v-if="isTodoPage" >If not Now,When ?<br/>If not you,Who ?</Col>
       <!--todo页渲染-->
 
       <!--info页渲染-->
-      <Col span="8" v-if="isInfoPage" >dddddddddd<br/>ddddddddd<br/>ddddddddddddddddddddd</Col>
+      <Col span="8" class="centertext" v-if="isInfoPage" >🍺来杯啤酒吧<br/>你想要的，一应俱全<br/></Col>
       <!--info页渲染-->
 
       <Col span="8">&nbsp;</Col>
@@ -315,5 +315,10 @@ export default {
     font-size:20px;
     color: #ffffff;
 
+  }
+  .centertext{
+    text-align: left;
+    color: #05297f;
+    font-size: 50px;
   }
 </style>
