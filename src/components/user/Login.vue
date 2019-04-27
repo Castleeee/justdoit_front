@@ -1,4 +1,4 @@
-<template>
+<template style="height: 100%;width: 100%;overflow: hidden;">
     <div class="full">
       <div :style=bg_img
       class="full">
@@ -20,8 +20,8 @@ export default {
         backgroundImage: 'url(' + require('../../assets/user/mountain.jpg') + ') ',
         backgroundPosition: 'right right',
         backgroundRepeat: 'no-repeat',
-        backgroundSize: 'cover'
-
+        backgroundSize: 'cover',
+        overflow: 'hidden'
       }
     }
   }
@@ -32,5 +32,7 @@ export default {
 <style scoped>
 .full{
   height: 100%;
+  width: 100%;
+  overflow: hidden
 }
 </style>

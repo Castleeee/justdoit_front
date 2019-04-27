@@ -1,9 +1,9 @@
-<template><div style="height: 100%;width: 100%;">
+<template style="height: 100%;width: 100%;overflow: hidden;"><div style="height: 100%;width: 100%;overflow: hidden;">
 
   <transition
     name="slide-fade"
   >
-  <template v-if="isHomePage">
+  <template v-if="isHomePage" >
     <div style="width: 100%;height: 100%;">
       <div class="home1">
         <div class="home2" style="height: 100%;width: 100%;">
@@ -170,8 +170,7 @@
     </div>
   </template>
 </transition>
-    <transition
-    name="zoom">
+    <transition name="zoom">
 
   <template v-if="isTodoPage">
     <div style="width: 100%;height: 100%;">
@@ -256,10 +255,8 @@
     </div>
   </template>
 </transition>
-    <transition
-    name="zoom">
-
-  <template v-if="isInfoPage">
+    <transition name="zoom">
+  <template v-if="isInfoPage" >
     <div style="width: 100%;height: 100%;">
       <div class="info">
         <div class="" style="height: 100%;width: 100%;">
