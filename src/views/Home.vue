@@ -1,9 +1,8 @@
 <template style="height: 100%;width: 100%;overflow: hidden;"><div style="height: 100%;width: 100%;overflow: hidden;">
 
-  <transition
-    name="slide-fade"
-  >
-  <template v-if="isHomePage" >
+  <transition name="slide-fade">
+
+    <template v-if="isHomePage" >
     <div style="width: 100%;height: 100%;">
       <div class="home1">
         <div class="home2" style="height: 100%;width: 100%;">
@@ -83,11 +82,12 @@
       </div>
     </div>
   </template>
-  </transition>
-  <transition
-    name="zoom">
 
-  <template v-if="isWordPage" >
+  </transition>
+
+  <transition name="fadeDown">
+
+    <template v-if="isWordPage" >
     <div style="width: 100%;height: 100%;">
       <div class="word">
         <div class="" style="height: 100%;width: 100%;">
@@ -169,8 +169,10 @@
       </div>
     </div>
   </template>
-</transition>
-    <transition name="zoom">
+
+  </transition>
+
+  <transition name="fadeDown">
 
   <template v-if="isTodoPage">
     <div style="width: 100%;height: 100%;">
@@ -254,9 +256,12 @@
       </div>
     </div>
   </template>
-</transition>
-    <transition name="zoom">
-  <template v-if="isInfoPage" >
+
+  </transition>
+
+  <transition name="fadeDown">
+
+    <template v-if="isInfoPage" >
     <div style="width: 100%;height: 100%;">
       <div class="info">
         <div class="" style="height: 100%;width: 100%;">
@@ -339,7 +344,8 @@
       </div>
     </div>
   </template>
-</transition>
+
+  </transition>
 
 </div> </template>
 
