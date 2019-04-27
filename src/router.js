@@ -1,22 +1,5 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from './views/Home.vue'
-
-import appDownload from './components/appDownload.vue'
-
-import Login from './components/user/Login.vue'
-
-import todoMain from './components/todo/todoMain.vue'
-import todoToday from './components/todo/todoToday.vue'
-import todoChart from './components/todo/todoChart.vue'
-
-import wordMain from './components/word/wordMain.vue'
-import wordToday from './components/word/wordToday.vue'
-import wordMine from './components/word/wordMine'
-
-import infoMain from './components/infostream/infoMain.vue'
-import infoToday from './components/infostream/infoToday.vue'
-import infoCustom from './components/infostream/infoCustom.vue'
 
 Vue.use(Router)
 
@@ -26,77 +9,77 @@ export default new Router({
     {
       path: '/',
       name: 'home',
-      component: Home
+      component (resolve) { require(['./views/Home.vue'], resolve) }
     },
     // user 相关路由
     //
     {
       path: '/Login',
       name: 'login',
-      component: Login
+      component (resolve) { require(['./components/user/Login.vue'], resolve) }
     },
     {
-      path: '/user',
-      name: 'user',
-      component: Login // todo 用户资料中心
+      path: '/usercenter',
+      name: 'userCenter',
+      component (resolve) { require([], resolve) } // todo 用户资料中心
     },
     // todo相关路由
     //
     {
       path: '/todo',
-      name: 'todo',
-      component: todoMain
+      name: 'todoMain',
+      component (resolve) { require(['./components/todo/todoMain.vue'], resolve) }
     },
     {
       path: '/todo/today',
-      name: 'todo',
-      component: todoToday
+      name: 'todoToday',
+      component (resolve) { require(['./components/todo/todoToday.vue'], resolve) }
     },
     {
       path: '/todo/chart',
       name: 'todoChart',
-      component: todoChart
+      component (resolve) { require(['./components/todo/todoChart.vue'], resolve) }
     },
     // word 相关路由
     //
     {
       path: '/word',
-      name: 'word',
-      component: wordMain
+      name: 'wordMain',
+      component (resolve) { require(['./components/word/wordMain.vue'], resolve) }
     },
     {
       path: '/word/today',
       name: 'wordToday',
-      component: wordToday
+      component (resolve) { require(['./components/word/wordToday.vue'], resolve) }
     },
     {
       path: '/word/mine',
       name: 'wordMine',
-      component: wordMine
+      component (resolve) { require(['./components/word/wordMine'], resolve) }
     },
     // info 相关路由
     //
     {
       path: '/info',
-      name: 'info',
-      component: infoMain
+      name: 'infoMain',
+      component (resolve) { require(['./components/infostream/infoMain.vue'], resolve) }
     },
     {
       path: '/info/today',
       name: 'infoToday',
-      component: infoToday
+      component (resolve) { require(['./components/infostream/infoToday.vue'], resolve) }
     },
     {
       path: '/info/custom',
       name: 'custom',
-      component: infoCustom
+      component (resolve) { require(['./components/infostream/infoCustom.vue'], resolve) }
     },
     // 其他路由
     //
     {
       path: '/appdown',
       name: 'appDownload',
-      component: appDownload
+      component (resolve) { require(['./components/appDownload.vue'], resolve) }
     },
     {
       path: '/about',
