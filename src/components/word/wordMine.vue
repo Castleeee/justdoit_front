@@ -1,5 +1,6 @@
 <template>
     <div class="full">
+      <img src="../../assets/user/mountain.jpg" style="height: 300%;"/>
         wodMine
     </div>
 </template>
@@ -13,5 +14,6 @@ export default {
 <style scoped>
     .full {
         height: 100%;
+        overflow: scroll;
     }
 </style>

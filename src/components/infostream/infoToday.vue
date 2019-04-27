@@ -13,5 +13,6 @@ export default {
 <style scoped>
 .full{
   height: 100%;
+  overflow: scroll;
 }
 </style>
