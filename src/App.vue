@@ -1,4 +1,4 @@
-<template>
+<template >
   <div id="app">
     <transition name="slide-fade">
   <router-view/>
@@ -23,6 +23,7 @@ export default {
 
 <style>
 html,body,#app {
+  cursor: url("assets/all/aursor.png"),auto;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
