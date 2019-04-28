@@ -15,7 +15,7 @@ import echarts from 'echarts'
 
 // 生产环境请注释mock语句
 import './mock/index.js'
-// 美化滚动条
+
 Vue.prototype.$echarts = echarts
 
 Vue.config.productionTip = false

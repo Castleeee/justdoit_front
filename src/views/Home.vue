@@ -350,7 +350,11 @@
 </div> </template>
 
 <script>
-
+//
+//
+// 首页，通过控制四个变量响应式的切换四个template，分别对应三个产品首页
+//
+//
 export default {
   name: 'home',
   data () {
@@ -364,7 +368,7 @@ export default {
   components: {
   },
   methods: {
-    switchPage (page) {
+    switchPage (page) { // 切换页面
       if (page === 'word') {
         this.isHomePage = false
         this.isWordPage = true
@@ -390,16 +394,17 @@ export default {
         this.isInfoPage = true
       }
     },
-    goouter (e) {
+    goouter (e) { // 外链
       window.location.href = e
     },
-    goinner (e) {
+    goinner (e) { // 内链
       this.$router.push({ path: e })
     }
   }
 }
 </script>
 <style scoped>
+  /*背景图*/
   .home1{
 
     height: 100%;
@@ -436,6 +441,7 @@ export default {
     background:url("../assets/all/home2.svg") no-repeat left bottom;
     background-size: 22%;
   }
+  /*小飞机图标*/
   .logo{
     width: 100%;
     height: 100%;
@@ -446,6 +452,7 @@ export default {
     left: 10%;
     cursor:pointer
   }
+  /*按钮样式*/
   .button{
 
     position: relative;
@@ -462,7 +469,7 @@ export default {
     font-weight:bold;
   color: #ffffff;
   }
-
+  /*文字样式*/
   .hrefTexe{
     font-size:20px;
     color: #ffffff;
@@ -473,6 +480,7 @@ export default {
     color: #2d8cf0;
     font-size: 50px;
   }
+  /*动画帧*/
   .slide-fade-enter-active {
     transition: all .3s ease;
   }
