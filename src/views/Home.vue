@@ -1,4 +1,4 @@
-<template style="height: 100%;width: 100%;"><div style="height: 100%;width: 100%;">
+<template style="height: 100%;width: 100%; "><div style="height: 100%;width: 100%;">
 
   <transition name="slide-fade">
 
@@ -356,6 +356,12 @@
 //
 //
 export default {
+  beforeCreate: function () {
+    document.getElementsByTagName('body')[0].className = 'removescroll'
+  },
+  beforeMounte: function () {
+    document.body.removeAttribute('class', 'removescroll')
+  },
   name: 'home',
   data () {
     return {
@@ -405,6 +411,7 @@ export default {
 </script>
 <style scoped>
   /*背景图*/
+
   .home1{
 
     height: 100%;

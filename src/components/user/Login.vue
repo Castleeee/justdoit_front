@@ -10,6 +10,14 @@
 <script>
 import loginCard from '@/components/user/loginCard.vue'
 export default {
+  beforeCreate: function () {
+    document.getElementsByTagName('body')[0].className = 'removescroll'
+  },
+  mounted: function () {
+    setTimeout(function () {
+      document.body.removeAttribute('class', 'removescroll')
+    }, 300)
+  },
   components: {
     loginCard
   },
@@ -20,8 +28,8 @@ export default {
         backgroundImage: 'url(' + require('../../assets/user/mountain.jpg') + ') ',
         backgroundPosition: 'right right',
         backgroundRepeat: 'no-repeat',
-        backgroundSize: 'cover',
-        overflow: 'hidden'
+        backgroundSize: 'cover'
+
       }
     }
   }
