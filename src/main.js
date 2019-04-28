@@ -24,8 +24,9 @@ Vue.use(VueAxios, axios)
 new Vue({
   router,
   store,
-  render: h => h(App),
-  mounted () {
-    document.dispatchEvent(new Event('render-event'))
-  }
+  render: h => h(App)
+  // 预渲染
+  // mounted () {
+  //   document.dispatchEvent(new Event('render-event'))
+  // }
 }).$mount('#app')
