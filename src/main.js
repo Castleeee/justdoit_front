@@ -30,3 +30,7 @@ new Vue({
   //   document.dispatchEvent(new Event('render-event'))
   // }
 }).$mount('#app')
+
+//
+// cookie操作
+//

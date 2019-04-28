@@ -1,10 +1,10 @@
 <template>
-  <div>appDowlond</div>
+  <div>appDownload</div>
 </template>
 
 <script>
 export default {
-  name: 'appDowlond'
+  name: 'appDownload'
 }
 </script>
 

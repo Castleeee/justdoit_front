@@ -9,6 +9,11 @@
 <script>
 
 export default {
+
+  created () {
+    document.body.removeChild(document.getElementById('Loading'))
+  },
+
   name: 'app',
   components: {
 
