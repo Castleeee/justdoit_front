@@ -14,6 +14,11 @@ export default new Router({
     // user 相关路由
     //
     {
+      path: '/findback',
+      name: 'findback',
+      component (resolve) { require(['./components/user/findback.vue'], resolve) }
+    },
+    {
       path: '/Login',
       name: 'login',
       component (resolve) { require(['./components/user/Login.vue'], resolve) }

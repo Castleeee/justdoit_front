@@ -10,7 +10,7 @@
 
 export default {
 
-  created () {
+  mounted () {
     document.body.removeChild(document.getElementById('Loading'))
   },
 
