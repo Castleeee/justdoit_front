@@ -15,10 +15,12 @@ import echarts from 'echarts'
 
 // 生产环境请注释mock语句
 import './mock/index.js'
+// axios.defaults.headers.post['X-CSRFToken'] = getCookie('csrftoken')
 
 Vue.prototype.$echarts = echarts
 
 Vue.config.productionTip = false
+
 Vue.use(VueAxios, axios)
 
 new Vue({
@@ -34,3 +36,13 @@ new Vue({
 //
 // cookie操作
 //
+// function getCookie (name) {
+//   var arr; var reg = new RegExp('(^| )' + name + '=([^;]*)(;|$)')
+//   if (arr = document.cookie.match(reg)) { return unescape(arr[2]) } else { return null }
+// }
+
+// function setCookie (name, value, days) {
+//   var exp = new Date()
+//   exp.setTime(exp.getTime() + days * 24 * 60 * 60 * 1000)
+//   document.cookie = name + '=' + escape(value) + ';expires=' + exp.toGMTString()
+// }

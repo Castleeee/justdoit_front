@@ -1,8 +1,8 @@
-<template style="height: 100%;width: 100%;overflow: hidden;">
+<template style="height: 100%;width: 100%;">
     <div class="full">
       <div :style=bg_img
       class="full">
-      <login-card style="padding-top: 5%"></login-card>
+      <login-card style="padding-top: 5%;padding-bottom: auto"></login-card>
       </div>
     </div>
 </template>
@@ -33,6 +33,6 @@ export default {
 .full{
   height: 100%;
   width: 100%;
-  overflow: hidden
+
 }
 </style>

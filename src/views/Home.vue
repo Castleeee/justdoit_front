@@ -1,4 +1,4 @@
-<template style="height: 100%;width: 100%;overflow: hidden;"><div style="height: 100%;width: 100%;overflow: hidden;">
+<template style="height: 100%;width: 100%;"><div style="height: 100%;width: 100%;">
 
   <transition name="slide-fade">
 
