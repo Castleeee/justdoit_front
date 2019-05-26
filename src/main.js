@@ -45,10 +45,6 @@ router.afterEach(route => {
   Vue.prototype.$LoadingBar.finish()
 })
 
-Vue.prototype.$Logout = function () {
-  Vue.prototype.$Alert()
-}
-
 new Vue({
   router,
   store,

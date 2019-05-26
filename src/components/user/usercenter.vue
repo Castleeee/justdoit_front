@@ -2,15 +2,16 @@
   <div class="full">
     <div :style=bg_img
          class="full">
-
+  <LogoutButton></LogoutButton>
     </div>
   </div>
 </template>
 
 <script>
+import LogoutButton from '@/components/user/LogoutButton.vue'
 export default {
   components: {
-
+    LogoutButton
   },
   name: 'usercenter',
   data () {
