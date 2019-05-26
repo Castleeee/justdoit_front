@@ -2,7 +2,7 @@
   <div class="full">
     <div :style=bg_img
          class="full">
-
+找回密码界面
     </div>
   </div>
 </template>
