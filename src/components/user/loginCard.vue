@@ -30,7 +30,8 @@
         <Input size="large"
                style="width: 72%;"
                v-model="passwd"
-               placeholder="密码"/>
+               placeholder="密码"
+               type="password"/>
       </label>
       <br v-if="signup" />
       <br v-if="signup" />
@@ -40,6 +41,7 @@
                size="large"
                style="width: 72%;"
                v-model="repasswd"
+               type="password"
                placeholder="再次输入密码" />
       </label>
       <br v-if="signup" />
@@ -127,7 +129,7 @@ export default {
         console.log(res.data, this.usernumber)
         this.$Message.success('Success!')
 
-        this.$store.commit('ADD_COUNT', res.data.token, this.usernumber)
+        this.$store.commit('ADD_COUNT', res.data.token, res.data.user)
 
         let clock = window.setInterval(() => {
           this.totalTime--

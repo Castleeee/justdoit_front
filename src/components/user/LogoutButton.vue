@@ -3,9 +3,10 @@
   <Button type="primary" shape="circle" @click="modal1 = true">LogOut</Button>
   <Modal
     v-model="modal1"
-    title="Common Modal dialog box title"
+    title="确认注销: )"
     @on-ok="ok"
     @on-cancel="cancel">
+    刷新页面生效，这将会清除您的cookie！
 
   </Modal>
   </div>
@@ -20,10 +21,12 @@ export default {
   },
   methods: {
     ok () {
-      this.$Message.info('Clicked ok')
+      this.$store.commit('REMOVE_COUNT')
+      this.$Message.success('注销成功')
+      this.$router.push({ path: '/' })
     },
     cancel () {
-      this.$Message.info('Clicked cancel')
+      this.$Message.info('取消～')
     }
   }
 }

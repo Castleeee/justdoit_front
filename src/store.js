@@ -9,7 +9,7 @@ const REMOVE_COUNT = 'REMOVE_COUNT'
 export default new Vuex.Store({
   state: {
     token: '',
-    userID: ''
+    userid: ''
 
   },
 
@@ -22,13 +22,13 @@ export default new Vuex.Store({
       sessionStorage.setItem('token', token)
       sessionStorage.setItem('userid', id)
       state.token = token
-      state.userID = id
+      state.userid = id
     },
-    [REMOVE_COUNT] (state, token, id) { // 退出登录
-      sessionStorage.removeItem('token', token)
-      sessionStorage.removeItem('id', id)
-      state.token = token
-      state.id = id
+    [REMOVE_COUNT] (state) { // 退出登录
+      sessionStorage.removeItem('token')
+      sessionStorage.removeItem('id')
+      state.token = ''
+      state.id = ''
     }
 
   },

@@ -21,7 +21,7 @@ Vue.prototype.$echarts = echarts
 Vue.config.productionTip = false
 
 Vue.use(VueAxios, axios)
-Vue.prototype.$backip = 'http://127.0.0.1:8001' // 指明后端ip地址
+Vue.prototype.$backip = 'http://127.0.0.1:8000' // 指明后端ip地址
 
 router.beforeEach((to, from, next) => {
   Vue.prototype.$LoadingBar.start()
