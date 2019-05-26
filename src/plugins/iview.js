@@ -20,8 +20,10 @@ import {
   Row,
   Col,
   Notice,
-  Tooltip
-
+  Tooltip,
+  LoadingBar,
+  Message,
+  Alert
 } from 'iview'
 
 import 'iview/dist/styles/iview.css'
@@ -46,4 +48,7 @@ Vue.component('Breadcrumb', Breadcrumb)
 Vue.component('Row', Row)
 Vue.component('Col', Col)
 Vue.component('Tooltip', Tooltip)
+Vue.prototype.$Message = Message
 Vue.prototype.$Notice = Notice
+Vue.prototype.$LoadingBar = LoadingBar
+Vue.prototype.$Alert = Alert

@@ -98,9 +98,10 @@ export default {
       passwd: '', // 密码
       repasswd: '', // 确认密码
       emali: '', // 邮箱
-      signup: true, // 是否为注册
+      signup: false, // 是否为注册
       equal: true,
-      findback: false
+      findback: false,
+      totalTime: 1// 登录等待时间
 
     }
   },
@@ -110,8 +111,38 @@ export default {
     },
 
     doLogin () { // 登陆逻辑
-      console.log('Login')
-      this.$router.push({ path: '/', params: { token: 'xxxxx' } })
+      console.log('startLogin')
+      this.$LoadingBar.start()
+      this.axios({
+        method: 'post',
+        headers: {
+          'Content-type': 'application/json;charset=UTF-8'
+        },
+        url: this.$backip + '/accounts/login/',
+        data: {
+          username: this.usernumber,
+          password: this.passwd
+        }
+      }).then(function (res) {
+        console.log(res.data, this.usernumber)
+        this.$Message.success('Success!')
+
+        this.$store.commit('ADD_COUNT', res.data.token, this.usernumber)
+
+        let clock = window.setInterval(() => {
+          this.totalTime--
+          if (this.totalTime < 0) {
+            window.clearInterval(clock)
+            this.$LoadingBar.finish()
+            this.$router.push('/')
+          }
+        }, 1000)
+      }.bind(this)).catch(function (err) {
+        this.$Message.error('登录失败，错误：' + err)
+        this.$LoadingBar.error()
+      }.bind(this))
+
+      // this.$router.push({ path: '/', params: { token: 'xxxxx' } })
     },
     doRegeist () { // 注册逻辑
       if (this.passwd !== this.repasswd) { // 判断确认密码和密码是否一样

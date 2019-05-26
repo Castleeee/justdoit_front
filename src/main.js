@@ -15,13 +15,39 @@ import echarts from 'echarts'
 
 // 生产环境请注释mock语句
 import './mock/index.js'
-// axios.defaults.headers.post['X-CSRFToken'] = getCookie('csrftoken')
 
 Vue.prototype.$echarts = echarts
 
 Vue.config.productionTip = false
 
 Vue.use(VueAxios, axios)
+Vue.prototype.$backip = 'http://127.0.0.1:8001' // 指明后端ip地址
+
+router.beforeEach((to, from, next) => {
+  Vue.prototype.$LoadingBar.start()
+  store.state.token = sessionStorage.getItem('token')// 获取本地存储的token
+
+  if (to.meta.requireAuth) { // 判断该路由是否需要登录权限
+    if (store.state.token !== '') { // 通过vuex state获取当前的token是否存
+      next()
+    } else {
+      next({
+        path: '/Login',
+        query: { redirect: to.fullPath } // 将跳转的路由path作为参数，登录成功后跳转到该路由
+      })
+    }
+  } else {
+    next()
+  }
+})
+
+router.afterEach(route => {
+  Vue.prototype.$LoadingBar.finish()
+})
+
+Vue.prototype.$Logout = function () {
+  Vue.prototype.$Alert()
+}
 
 new Vue({
   router,
@@ -32,17 +58,3 @@ new Vue({
   //   document.dispatchEvent(new Event('render-event'))
   // }
 }).$mount('#app')
-
-//
-// cookie操作
-//
-// function getCookie (name) {
-//   var arr; var reg = new RegExp('(^| )' + name + '=([^;]*)(;|$)')
-//   if (arr = document.cookie.match(reg)) { return unescape(arr[2]) } else { return null }
-// }
-
-// function setCookie (name, value, days) {
-//   var exp = new Date()
-//   exp.setTime(exp.getTime() + days * 24 * 60 * 60 * 1000)
-//   document.cookie = name + '=' + escape(value) + ';expires=' + exp.toGMTString()
-// }

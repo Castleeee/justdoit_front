@@ -146,7 +146,7 @@
               <Button icon="ios-book" class="buttoncenter" type="primary" shape="circle" to="/word">开始使用</Button>
             </Col>
             <Col span="2"  >
-              <Button icon='md-contact' class="buttoncenter" shape="circle" to="/login">账户</Button>
+              <Button icon='md-contact' class="buttoncenter" shape="circle" to="/usercenter">账户</Button>
             </Col>
             <Col span="2"  >
               <Button icon='logo-android' class="buttoncenter" shape="circle" @click="goinner('/appdown')">手机APP</Button>
@@ -233,7 +233,7 @@
               <Button icon='md-checkbox' class="buttoncenter" type="primary" shape="circle" to="/todo">开始使用</Button>
             </Col>
             <Col span="2"  >
-              <Button icon='md-contact' class="buttoncenter" shape="circle" to="/login">账户</Button>
+              <Button icon='md-contact' class="buttoncenter" shape="circle" to="/usercenter">账户</Button>
             </Col>
             <Col span="2"  >
               <Button icon='logo-android' class="buttoncenter" shape="circle" @click="goinner('/appdown')">手机APP</Button>
@@ -321,7 +321,7 @@
               <Button icon="md-beer" class="buttoncenter" type="primary" shape="circle" to="/info">开始使用</Button>
             </Col>
             <Col span="2"  >
-              <Button icon='md-contact' class="buttoncenter" shape="circle" to="/login">账户</Button>
+              <Button icon='md-contact' class="buttoncenter" shape="circle" to="/usercenter">账户</Button>
             </Col>
             <Col span="2"  >
               <Button icon='logo-android' class="buttoncenter" shape="circle" @click="goinner('/appdown')" >手机APP</Button>

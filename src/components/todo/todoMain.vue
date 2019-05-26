@@ -1,19 +1,20 @@
 <template>
   <div class="layout">
     <Layout style="height: 100%">
-      <Header style="background:#ffffff;" >
+      <Header style="background:#ffffff;">
         <Menu mode="horizontal" theme="light" active-name="1" @on-select="goPush">
           <img class="layout-logo" src="../../assets/all/paper-plane.svg" alt=" ：）"/>
-          <div class="layout-nav" style="width: 60%" >
-            <MenuItem >
-              <Input v-model="searchword" placeholder="搜索你的todo" style="width: 300px" /><I style="-webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none;">&nbsp;&nbsp;</I>
-              <Button type="primary" shape="circle" icon="ios-search" ></Button>
+          <div class="layout-nav" style="width: 60%">
+            <MenuItem name="null">
+              <Input v-model="searchword" placeholder="搜索你的todo" style="width: 300px"/><I
+              style="-webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none;">&nbsp;&nbsp;</I>
+              <Button type="primary" shape="circle" icon="ios-search"></Button>
             </MenuItem>
 
-              <I style="-webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</I>
+            <I style="-webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</I>
 
-            <MenuItem name="login">
-              <Icon type="md-contact" />
+            <MenuItem name="usercenter">
+              <Icon type="md-contact"/>
               账户
             </MenuItem>
             <Submenu name="more">
@@ -32,7 +33,7 @@
               </MenuGroup>
             </Submenu>
             <MenuItem name="infoStream">
-              <Icon type="md-planet" />
+              <Icon type="md-planet"/>
               信息流
             </MenuItem>
           </div>
@@ -47,24 +48,24 @@
         <Content :style="{padding: '24px 0', minHeight: '280px', background: '#fff'}">
           <Layout>
             <Sider hide-trigger :style="{background: '#fff'}">
-              <Menu  active-name="1">
+              <Menu active-name="1">
                 <MenuGroup title="内容管理">
                   <MenuItem name="1">
-                    <Icon type="md-document" />
+                    <Icon type="md-document"/>
                     文章管理
                   </MenuItem>
                   <MenuItem name="2">
-                    <Icon type="md-chatbubbles" />
+                    <Icon type="md-chatbubbles"/>
                     评论管理
                   </MenuItem>
                 </MenuGroup>
                 <MenuGroup title="统计分析">
                   <MenuItem name="3">
-                    <Icon type="md-heart" />
+                    <Icon type="md-heart"/>
                     用户留存
                   </MenuItem>
                   <MenuItem name="4">
-                    <Icon type="md-leaf" />
+                    <Icon type="md-leaf"/>
                     流失用户
                   </MenuItem>
                 </MenuGroup>
@@ -107,22 +108,27 @@ export default {
   },
   methods: {
     goPush (name) {
-    // console.log(name)
-      if (['login', 'more1', 'more2', 'more3', 'more4', 'more5', 'infoStream'].indexOf(name) !== -1) { this.$router.push({ path: '/' + name }) } else { console.log(name) }
+      // console.log(name)
+      if (['usercenter', 'login', 'more1', 'more2', 'more3', 'more4', 'more5', 'infoStream'].indexOf(name) !== -1) {
+        this.$router.push({ path: '/' + name })
+      } else {
+        console.log(name)
+      }
     }
   }
 }
 </script>
 <style scoped>
-  .layout{
+  .layout {
     height: 100%;
     border: 1px solid #d7dde4;
-    background:url("../../assets/user/mountain.jpg");
+    background: url("../../assets/user/mountain.jpg");
     position: relative;
     border-radius: 4px;
     overflow: hidden;
   }
-  .layout-logo{
+
+  .layout-logo {
     width: 40px;
     height: 40px;
     border-radius: 5px;
@@ -131,7 +137,8 @@ export default {
     top: 10px;
     left: 20px;
   }
-  .layout-nav{
+
+  .layout-nav {
     width: 420px;
     margin: 0 auto;
     margin-right: 20px;

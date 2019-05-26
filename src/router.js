@@ -21,12 +21,30 @@ export default new Router({
     {
       path: '/Login',
       name: 'login',
-      component (resolve) { require(['./components/user/Login.vue'], resolve) }
+      // beforeEnter: (to, from, next) => {
+      //   var token = sessionStorage.getItem('token')
+      //   if (token !== '') {
+      //     console.log('router worked')
+      //     next({
+      //       path: '/',
+      //       query: { redirect: to.fullPath } // 将跳转的路由path作为参数，登录成功后跳转到该路由
+      //     })
+      //     Vue.prototype.$LoadingBar.finish()
+      //   }
+      // },
+      component (resolve) {
+        require(['./components/user/Login.vue'], resolve)
+      }
+
     },
     {
       path: '/usercenter',
-      name: 'userCenter',
-      component (resolve) { require([], resolve) } // todo 用户资料中心
+      name: 'usercenter',
+      component (resolve) { require(['./components/user/usercenter.vue'], resolve) },
+      meta: {
+        requireAuth: true // 添加该字段，表示进入这个路由是需要登录的
+      }// todo 用户资料中心cmd
+
     },
     // todo相关路由
     //
