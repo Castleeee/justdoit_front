@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Card style="height:7%;width:40%;margin:auto;">
+    <Card>
       <div
         v-if="signup"
         style="height: 10%;font-size: 20px">
@@ -60,7 +60,8 @@
       <!-- 上面是表单，根据signup的值变化判断是登陆还是注册 -->
       <div style="margin-bottom: 7%;"
            v-if="signup">
-        <Button style="width: 60%"
+        <Button :disabled="isdisabled"
+                style="width: 60%"
                 type="success"
                 @click="doRegeist">注册
         </Button>
@@ -72,7 +73,8 @@
       </div>
       <div style="margin-bottom: 7%;"
            v-else>
-        <Button style="width: 60%"
+        <Button :disabled="isdisabled"
+                style="width: 60%"
                 type="primary"
                 @click="doLogin">登录
         </Button>
@@ -103,7 +105,8 @@ export default {
       signup: false, // 是否为注册
       equal: true,
       findback: false,
-      totalTime: 1// 登录等待时间
+      totalTime: 1, // 登录等待时间
+      isdisabled: false// 避免按钮重复请求多次
 
     }
   },
@@ -140,40 +143,40 @@ export default {
         }
       }
     },
-    handleAxiosErr (err) {
+    handleAxiosErr (err) { // 错误提示函数
       switch (err.response.status) {
         case 400:
-          err.message = '请求错误'
+          this.$Message.error('用户名或密码错误 : ' + err.response.status)
           break
         case 401:
-          err.message = '未授权，请登录'
+          this.$Message.error('未授权，请登录 : ' + err.response.status)
           break
         case 403:
-          err.message = '拒绝访问'
+          this.$Message.error('拒绝访问 : ' + err.response.status)
           break
         case 404:
-          err.message = `请求地址不存在`
+          this.$Message.error(`请求地址不存在 : ` + err.response.status)
           break
         case 408:
-          err.message = '请求超时'
+          this.$Message.error('请求超时 : ' + err.response.status)
           break
         case 500:
-          err.message = '服务器内部错误'
+          this.$Message.error('服务器内部错误 : ' + err.response.status)
           break
         case 501:
-          err.message = '服务未实现'
+          this.$Message.error('服务未实现 : ' + err.response.status)
           break
         case 502:
-          err.message = '网关错误'
+          this.$Message.error('网关错误 : ' + err.response.status)
           break
         case 503:
-          err.message = '服务不可用'
+          this.$Message.error('服务不可用 : ' + err.response.status)
           break
         case 504:
-          err.message = '网关超时'
+          this.$Message.error('网关超时 : ' + err.response.status)
           break
         case 505:
-          err.message = 'HTTP版本不受支持'
+          this.$Message.error('HTTP版本不受支持 : ' + err.response.status)
           break
         default:
           this.$Message.error('登录失败，错误：' + err.response.config.url)
@@ -196,7 +199,7 @@ export default {
           }
         }).then(function (res) { // post成功
           this.$Message.success('Success!')// 告诉用户登录成功
-
+          this.isdisabled = true
           this.$store.commit('ADD_COUNT', res.data.token, this.usernumber, 'a')// todo 设置用户token和用户id
           console.log(res.data, this.usernumber)
           let clock = window.setInterval(() => { // 1秒延迟
@@ -204,11 +207,20 @@ export default {
             if (this.totalTime < 0) {
               window.clearInterval(clock)
               this.$LoadingBar.finish()// 结束加载动画
+              this.isdisabled = false// 按钮改回来
               this.$router.push('/')// 返回到首页
             }
           }, 1000)
         }.bind(this)).catch(function (err) { // post没成功
+          this.isdisabled = true
           this.handleAxiosErr(err)
+          let clock = window.setInterval(() => { // 1秒延迟
+            this.totalTime--
+            if (this.totalTime < 0) {
+              window.clearInterval(clock)
+              this.isdisabled = false// 按钮改回来
+            }
+          }, 1000)
         }.bind(this))
       }
     },

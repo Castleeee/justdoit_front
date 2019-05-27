@@ -2,15 +2,16 @@
   <div class="full">
     <div :style=bg_img
          class="full">
-      找回密码界面1
+    <findbackCard class="cardclass"></findbackCard>
     </div>
   </div>
 </template>
 
 <script>
+import findbackCard from '@/components/user/findbackCard.vue'
 export default {
   components: {
-
+    findbackCard
   },
   name: 'backVlidateEmali',
   data () {
@@ -33,5 +34,12 @@ export default {
     height: 100%;
     width: 100%;
     overflow: hidden
+  }
+  .cardclass{
+    padding-top: 5%;
+    padding-bottom: auto;
+    height:7%;
+    width:40%;
+    margin:auto;
   }
 </style>

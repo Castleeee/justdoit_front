@@ -2,7 +2,7 @@
     <div class="full">
       <div :style=bg_img
       class="full">
-      <login-card style="padding-top: 5%;padding-bottom: auto"></login-card>
+      <login-card class="cardclass"></login-card>
 
         <Button style="bottom: 20px;right: 20px; position: fixed;" type="info" ghost shape="circle" to="/backValidateEmail">找回密码</Button>
       </div>
@@ -44,5 +44,12 @@ export default {
   height: 100%;
   width: 100%;
 
+}
+.cardclass{
+  padding-top: 5%;
+  padding-bottom: auto;
+  height:7%;
+  width:40%;
+  margin:auto;
 }
 </style>

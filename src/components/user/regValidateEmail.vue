@@ -2,15 +2,16 @@
   <div class="full">
     <div :style=bg_img
          class="full">
-      注册验证
+      <register-card class="cardclass"></register-card>
     </div>
   </div>
 </template>
 
 <script>
+import registerCard from '@/components/user/registerCard.vue'
 export default {
   components: {
-
+    registerCard
   },
   name: 'regValidateEmali',
   data () {
@@ -33,5 +34,12 @@ export default {
     height: 100%;
     width: 100%;
     overflow: hidden
+  }
+  .cardclass{
+    padding-top: 5%;
+    padding-bottom: auto;
+    height:7%;
+    width:40%;
+    margin:auto;
   }
 </style>
