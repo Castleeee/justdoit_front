@@ -12,7 +12,7 @@
         style="height: 10%;font-size: 20px">
         登录
       </div>
-<!-- 上面是标签 -->
+      <!-- 上面是标签 -->
       <Divider>·</Divider>
       <br/> <br/> <br/>
 
@@ -33,20 +33,20 @@
                placeholder="密码"
                type="password"/>
       </label>
-      <br v-if="signup" />
-      <br v-if="signup" />
-      <br v-if="signup" />
+      <br v-if="signup"/>
+      <br v-if="signup"/>
+      <br v-if="signup"/>
       <label v-if="signup">确认:
         <Input
-               size="large"
-               style="width: 72%;"
-               v-model="repasswd"
-               type="password"
-               placeholder="再次输入密码" />
+          size="large"
+          style="width: 72%;"
+          v-model="repasswd"
+          type="password"
+          placeholder="再次输入密码"/>
       </label>
-      <br v-if="signup" />
-      <br v-if="signup" />
-      <br v-if="signup" />
+      <br v-if="signup"/>
+      <br v-if="signup"/>
+      <br v-if="signup"/>
       <label v-if="signup">邮箱:
         <Input size="large"
                style="width: 72%;"
@@ -57,7 +57,7 @@
       <br/>
       <br/>
       <br/>
-<!-- 上面是表单，根据signup的值变化判断是登陆还是注册 -->
+      <!-- 上面是表单，根据signup的值变化判断是登陆还是注册 -->
       <div style="margin-bottom: 7%;"
            v-if="signup">
         <Button style="width: 60%"
@@ -82,7 +82,7 @@
                 type="success">注册
         </Button>
       </div>
-<!-- 上面是按钮，切换登陆状态执行逻辑 -->
+      <!-- 上面是按钮，切换登陆状态执行逻辑 -->
 
     </Card>
 
@@ -140,7 +140,46 @@ export default {
         }
       }
     },
-
+    handleRequestErr (err) {
+      switch (err.response.status) {
+        case 400:
+          err.message = '请求错误'
+          break
+        case 401:
+          err.message = '未授权，请登录'
+          break
+        case 403:
+          err.message = '拒绝访问'
+          break
+        case 404:
+          err.message = `请求地址不存在`
+          break
+        case 408:
+          err.message = '请求超时'
+          break
+        case 500:
+          err.message = '服务器内部错误'
+          break
+        case 501:
+          err.message = '服务未实现'
+          break
+        case 502:
+          err.message = '网关错误'
+          break
+        case 503:
+          err.message = '服务不可用'
+          break
+        case 504:
+          err.message = '网关超时'
+          break
+        case 505:
+          err.message = 'HTTP版本不受支持'
+          break
+        default:
+          this.$Message.error('登录失败，错误：' + err.response.config.url)
+      }
+      this.$LoadingBar.error()// 加载错误进度条动画
+    },
     doLogin () { // 登陆逻辑
       if (this.validate(this.usernumber, this.passwd, '', '', true)) { // 验证表单合法
         // console.log('startLogin')
@@ -169,8 +208,7 @@ export default {
             }
           }, 1000)
         }.bind(this)).catch(function (err) { // post没成功
-          this.$Message.error('登录失败，错误：' + err)// 打印错误
-          this.$LoadingBar.error()// 加载错误进度条动画
+          this.handleRequestErr(err)
         }.bind(this))
       }
     },
@@ -181,7 +219,8 @@ export default {
       }
     } // 注册逻辑
 
-  } }
+  }
+}
 
 </script>
 
