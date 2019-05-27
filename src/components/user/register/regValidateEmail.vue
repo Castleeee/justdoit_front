@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import registerCard from '@/components/user/registerCard.vue'
+import registerCard from '@/components/user/register/registerCard.vue'
 export default {
   components: {
     registerCard
@@ -17,7 +17,7 @@ export default {
   data () {
     return {
       bg_img: {
-        backgroundImage: 'url(' + require('../../assets/user/mountain.jpg') + ') ',
+        backgroundImage: 'url(' + require('../../../assets/user/mountain.jpg') + ') ',
         backgroundPosition: 'right right',
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'cover',

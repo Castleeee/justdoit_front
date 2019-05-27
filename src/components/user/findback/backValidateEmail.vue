@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import findbackCard from '@/components/user/findbackCard.vue'
+import findbackCard from '@/components/user/findback/findbackCard.vue'
 export default {
   components: {
     findbackCard
@@ -17,7 +17,7 @@ export default {
   data () {
     return {
       bg_img: {
-        backgroundImage: 'url(' + require('../../assets/user/mountain.jpg') + ') ',
+        backgroundImage: 'url(' + require('../../../assets/user/mountain.jpg') + ') ',
         backgroundPosition: 'right right',
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'cover',

@@ -17,19 +17,19 @@ export default new Router({
       path: '/Login', // todo 如果已经是验证状态,跳转首页
       name: 'login',
       component (resolve) {
-        require(['./components/user/Login.vue'], resolve)
+        require(['./components/user/login/Login.vue'], resolve)
       }
 
     },
     {
       path: '/regValidateEmail', // 注册验证界面
       name: 'regValidateEmail',
-      component (resolve) { require(['./components/user/regValidateEmail.vue'], resolve) }
+      component (resolve) { require(['./components/user/register/regValidateEmail.vue'], resolve) }
     },
     {
       path: '/backValidateEmail', // 找回密码验证邮箱界面
       name: 'backValidateEmali',
-      component (resolve) { require(['./components/user/backValidateEmail.vue'], resolve) }
+      component (resolve) { require(['./components/user/findback/backValidateEmail.vue'], resolve) }
     },
     {
       path: '/usercenter',

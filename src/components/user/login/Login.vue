@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import loginCard from '@/components/user/loginCard.vue'
+import loginCard from '@/components/user/login/loginCard.vue'
 export default {
   beforeCreate: function () {
     document.getElementsByTagName('body')[0].className = 'removescroll'
@@ -27,7 +27,7 @@ export default {
   data () {
     return {
       bg_img: {
-        backgroundImage: 'url(' + require('../../assets/user/mountain.jpg') + ') ',
+        backgroundImage: 'url(' + require('../../../assets/user/mountain.jpg') + ') ',
         backgroundPosition: 'right right',
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'cover'
