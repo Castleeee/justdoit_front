@@ -6,15 +6,15 @@
       下次可要记住咯(´・ω・｀)
       <p>
         <br/>
-        <Input class='inputclass' v-model="email" size="large" placeholder="如果还记得邮箱的话,就填在这里..."/>
+        邮&nbsp;&nbsp;&nbsp;&nbsp;箱 📮 : <Input class='inputclass' v-model="email" size="large" placeholder="如果还记得邮箱的话,就填在这里..."/>
         <br/>
         <br/>
       </p>
       <p>
-        <Input class='inputclass' v-model="code" size="large" placeholder="ノ( ' - 'ノ)收到的验证码放这里"/>
+        验证码 ✉️ : <Input class='inputclass' v-model="code" size="large" placeholder="ノ( ' - 'ノ)收到的验证码放这里"/>
         <br>
         <br/>
-        <Input class='inputclass' v-model="password" size="large" placeholder="新密码"/>
+       新密码 🔑 : <Input class='inputclass' v-model="password" size="large" placeholder="新密码"/>
         <br>
         <br/>
         <br/>

@@ -34,7 +34,7 @@ export default new Router({
     {
       path: '/usercenter',
       name: 'usercenter',
-      component (resolve) { require(['./components/user/usercenter.vue'], resolve) },
+      component (resolve) { require(['./components/user/usercenter/usercenter.vue'], resolve) },
       meta: {
         requireAuth: true // 添加该字段，表示进入这个路由是需要登录的
       }// todo 用户资料中心cmd
