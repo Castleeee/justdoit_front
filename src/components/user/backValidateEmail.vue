@@ -2,7 +2,7 @@
   <div class="full">
     <div :style=bg_img
          class="full">
-找回密码界面
+      找回密码界面1
     </div>
   </div>
 </template>
@@ -12,7 +12,7 @@ export default {
   components: {
 
   },
-  name: 'findback',
+  name: 'backVlidateEmali',
   data () {
     return {
       bg_img: {

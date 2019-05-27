@@ -50,7 +50,7 @@
       <label v-if="signup">邮箱:
         <Input size="large"
                style="width: 72%;"
-               v-model="emali"
+               v-model="email"
                placeholder="你的邮箱"/>
       </label>
       <br/>
@@ -99,7 +99,7 @@ export default {
       usernumber: '', // 用户名
       passwd: '', // 密码
       repasswd: '', // 确认密码
-      emali: '', // 邮箱
+      email: '', // 邮箱
       signup: false, // 是否为注册
       equal: true,
       findback: false,
@@ -112,51 +112,77 @@ export default {
       this.signup = !this.signup
     },
 
-    doLogin () { // 登陆逻辑
-      console.log('startLogin')
-      this.$LoadingBar.start()
-      this.axios({
-        method: 'post',
-        headers: {
-          'Content-type': 'application/json;charset=UTF-8'
-        },
-        url: this.$backip + '/accounts/login/',
-        data: {
-          username: this.usernumber,
-          password: this.passwd
-        }
-      }).then(function (res) {
-        console.log(res.data, this.usernumber)
-        this.$Message.success('Success!')
-
-        this.$store.commit('ADD_COUNT', res.data.token, res.data.user)
-
-        let clock = window.setInterval(() => {
-          this.totalTime--
-          if (this.totalTime < 0) {
-            window.clearInterval(clock)
-            this.$LoadingBar.finish()
-            this.$router.push('/')
+    validate (username, password, repassword, email, islogin) {
+      if (!RegExp('^[\u4E00-\u9FA5a-zA-Z0-9]*$').test(username) || username.length < 2 || username.length > 8) { // 判断用户名是否合法
+        this.$Message.error('用户名必须由2-8字母和汉字组成')
+        return false
+      } else {
+        if (password.length < 8) { // 密码长度不能短于8个字符
+          this.$Message.error('密码太短')
+          // console.log('asdafsdfdas')
+          return false
+        } else {
+          if (islogin === true) { // 注册验证还是登陆验证
+            return true
+          } else {
+            if (password !== repassword) { // 判断确认密码和密码是否一样
+              this.$Message.error('两次密码不一致')
+              return false
+            } else {
+              if (email.indexOf('@') === -1 || email.length < 7) { // 简单检测邮箱合法性
+                this.$Message.error('邮箱不正确！')
+                return false
+              } else {
+                return true
+              }
+            }
           }
-        }, 1000)
-      }.bind(this)).catch(function (err) {
-        this.$Message.error('登录失败，错误：' + err)
-        this.$LoadingBar.error()
-      }.bind(this))
-
-      // this.$router.push({ path: '/', params: { token: 'xxxxx' } })
-    },
-    doRegeist () { // 注册逻辑
-      if (this.passwd !== this.repasswd) { // 判断确认密码和密码是否一样
-        this.$Notice.error({
-          title: '\n\n&nbsp;\n&nbsp;',
-          desc: '两次输入密码不一致！'
-        })
+        }
       }
-      console.log('Regeist')
-    }
-  }
-}
+    },
+
+    doLogin () { // 登陆逻辑
+      if (this.validate(this.usernumber, this.passwd, '', '', true)) { // 验证表单合法
+        // console.log('startLogin')
+        this.$LoadingBar.start()// 加载条动画
+        this.axios({// post接口
+          method: 'post',
+          headers: {
+            'Content-type': 'application/json;charset=UTF-8'// 注意header
+          },
+          url: this.$backip + '/accounts/login/', // 接口
+          data: {// 表单数据
+            username: this.usernumber,
+            password: this.passwd
+          }
+        }).then(function (res) { // post成功
+          this.$Message.success('Success!')// 告诉用户登录成功
+
+          this.$store.commit('ADD_COUNT', res.data.token, this.usernumber, 'a')// todo 设置用户token和用户id
+          console.log(res.data, this.usernumber)
+          let clock = window.setInterval(() => { // 1秒延迟
+            this.totalTime--
+            if (this.totalTime < 0) {
+              window.clearInterval(clock)
+              this.$LoadingBar.finish()// 结束加载动画
+              this.$router.push('/')// 返回到首页
+            }
+          }, 1000)
+        }.bind(this)).catch(function (err) { // post没成功
+          this.$Message.error('登录失败，错误：' + err)// 打印错误
+          this.$LoadingBar.error()// 加载错误进度条动画
+        }.bind(this))
+      }
+    },
+    doRegeist () {
+      if (this.validate(this.usernumber, this.passwd, this.repasswd, this.email, false)) { // todo 注册逻辑
+        console.log('do some post')
+        this.$router.push({ path: '/regValidateEmail' })// 注册后验证邮箱
+      }
+    } // 注册逻辑
+
+  } }
+
 </script>
 
 <style scoped>

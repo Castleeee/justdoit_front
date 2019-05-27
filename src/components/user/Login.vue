@@ -4,7 +4,7 @@
       class="full">
       <login-card style="padding-top: 5%;padding-bottom: auto"></login-card>
 
-        <Button style="bottom: 20px;right: 20px; position: fixed;" type="info" ghost shape="circle" to="/findback">找回密码</Button>
+        <Button style="bottom: 20px;right: 20px; position: fixed;" type="info" ghost shape="circle" to="/backValidateEmail">找回密码</Button>
       </div>
     </div>
 </template>

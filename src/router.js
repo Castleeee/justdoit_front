@@ -14,28 +14,22 @@ export default new Router({
     // user 相关路由
     //
     {
-      path: '/findback',
-      name: 'findback',
-      component (resolve) { require(['./components/user/findback.vue'], resolve) }
-    },
-    {
-      path: '/Login',
+      path: '/Login', // todo 如果已经是验证状态,跳转首页
       name: 'login',
-      // beforeEnter: (to, from, next) => {
-      //   var token = sessionStorage.getItem('token')
-      //   if (token !== '') {
-      //     console.log('router worked')
-      //     next({
-      //       path: '/',
-      //       query: { redirect: to.fullPath } // 将跳转的路由path作为参数，登录成功后跳转到该路由
-      //     })
-      //     Vue.prototype.$LoadingBar.finish()
-      //   }
-      // },
       component (resolve) {
         require(['./components/user/Login.vue'], resolve)
       }
 
+    },
+    {
+      path: '/regValidateEmail', // 注册验证界面
+      name: 'regValidateEmail',
+      component (resolve) { require(['./components/user/regValidateEmail.vue'], resolve) }
+    },
+    {
+      path: '/backValidateEmail', // 找回密码验证邮箱界面
+      name: 'backValidateEmali',
+      component (resolve) { require(['./components/user/backValidateEmail.vue'], resolve) }
     },
     {
       path: '/usercenter',
@@ -111,6 +105,14 @@ export default new Router({
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
+    },
+    {
+      path: '/*',
+      name: '404',
+      // route level code-splitting
+      // this generates a separate chunk (about.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import('./views/error/404page.vue')
     }
   ]
 })

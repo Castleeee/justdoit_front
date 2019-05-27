@@ -9,7 +9,9 @@
 <script>
 
 export default {
-
+  beforeMount () {
+    sessionStorage.setItem('isLogin', false)
+  },
   mounted () {
     document.body.removeChild(document.getElementById('Loading'))
   },
@@ -23,7 +25,6 @@ export default {
 
 <style>
 html,body,#app {
-  cursor: url("assets/all/aursor.png"),auto;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
