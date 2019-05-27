@@ -140,7 +140,7 @@ export default {
         }
       }
     },
-    handleRequestErr (err) {
+    handleAxiosErr (err) {
       switch (err.response.status) {
         case 400:
           err.message = '请求错误'
@@ -208,7 +208,7 @@ export default {
             }
           }, 1000)
         }.bind(this)).catch(function (err) { // post没成功
-          this.handleRequestErr(err)
+          this.handleAxiosErr(err)
         }.bind(this))
       }
     },
