@@ -149,8 +149,9 @@ export default {
       let clock = window.setInterval(() => { // 1秒延迟
         this.submitDisabledTime--
         if (this.submitDisabledTime < 0) {
+          this.submitDisabledTime = 1
+          this.submitDisabled = false// 按钮改回来
           window.clearInterval(clock)
-          this.submitDisabledTime = false// 按钮改回来
         }
       }, 1000)
     }
