@@ -82,6 +82,7 @@ export default {
         return true
       } else {
         this.$Message.error('验证码错误')
+        this.$LoadingBar.error()// 加载错误进度条动画
         return false
       }
     },

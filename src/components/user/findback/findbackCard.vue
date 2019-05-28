@@ -6,7 +6,8 @@
       下次可要记住咯(´・ω・｀)
       <p>
         <br/>
-        邮&nbsp;&nbsp;&nbsp;&nbsp;箱 📮 : <Input class='inputclass' v-model="email" size="large" placeholder="如果还记得邮箱的话,就填在这里..."/>
+        邮&nbsp;&nbsp;&nbsp;&nbsp;箱 📮 : <Input class='inputclass' v-model="email" size="large"
+                                               placeholder="如果还记得邮箱的话,就填在这里..."/>
         <br/>
         <br/>
       </p>
@@ -14,7 +15,7 @@
         验证码 ✉️ : <Input class='inputclass' v-model="code" size="large" placeholder="ノ( ' - 'ノ)收到的验证码放这里"/>
         <br>
         <br/>
-       新密码 🔑 : <Input class='inputclass' v-model="password" size="large" placeholder="新密码"/>
+        新密码 🔑 : <Input class='inputclass' v-model="password" size="large" placeholder="新密码"/>
         <br>
         <br/>
         <br/>
@@ -127,10 +128,12 @@ export default {
     },
     sendCode () { // 发送验证码
       this.sendDisabled = true
-      this.$LoadingBar.start()// 开始加载条
-      if (this.validate(this.code, this.email, this.password, true)) { // 验证表单合法性
+
+      if (this.validate(this.code, this.email, this.password, true)) {
+        this.$LoadingBar.start()// 开始加载条// 验证表单合法性
         // this.axios.post()// todo 结束进度条，成功或者失败，捕捉错误
       }
+
       let clock = window.setInterval(() => { // 1秒延迟
         this.sendDisabledTime--
         if (this.sendDisabledTime < 0) {
@@ -142,8 +145,9 @@ export default {
     },
     submitCode () {
       this.submitDisabled = true// 禁用提交按钮
-      this.$LoadingBar.start()// 开始加载条动画
+
       if (this.validate(this.code, '', '', false)) { // 验证表单合法
+        this.$LoadingBar.start()// 开始加载条动画
         // this.axios.post()// todo 结束进度条，成功或者失败，捕捉错误,重置成功跳回登陆页
       }
       let clock = window.setInterval(() => { // 1秒延迟
