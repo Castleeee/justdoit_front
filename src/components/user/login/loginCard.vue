@@ -113,6 +113,7 @@ export default {
   methods: {
     switchsign () { // 切换注册还是登录
       this.signup = !this.signup
+      this.isdisabled = false
     },
 
     validate (username, password, repassword, email, islogin) {
@@ -190,9 +191,10 @@ export default {
         this.axios({// post接口
           method: 'post',
           headers: {
-            'Content-type': 'application/json;charset=UTF-8'// 注意header
+            'Content-type': 'application/json;charset=UTF-8', // 注意header
+            'Access-Control-Allow-Origin': '*'
           },
-          url: this.$backip + '/accounts/login/', // 接口
+          url: '/accounts/login/', // todo 不要忘了修改接口ip！！
           data: {// 表单数据
             username: this.usernumber,
             password: this.passwd
@@ -212,7 +214,8 @@ export default {
             }
           }, 1000)
         }.bind(this)).catch(function (err) { // post没成功
-          this.isdisabled = true
+          console.log(err)
+          // this.isdisabled = true
           this.handleAxiosErr(err)
           let clock = window.setInterval(() => { // 1秒延迟
             this.totalTime--
@@ -227,6 +230,9 @@ export default {
     doRegeist () {
       if (this.validate(this.usernumber, this.passwd, this.repasswd, this.email, false)) { // todo 注册逻辑
         console.log('do some post')
+        // todo post一下第一个接口
+        // todo 把基本信息放到vuex里面
+        // todo 跳转到email验证界面
         this.$router.push({ path: '/regValidateEmail' })// 注册后验证邮箱
       }
     } // 注册逻辑

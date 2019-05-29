@@ -21,7 +21,7 @@ Vue.prototype.$echarts = echarts
 Vue.config.productionTip = false
 
 Vue.use(VueAxios, axios)
-Vue.prototype.$backip = 'http://127.0.0.1:8000' // 指明后端ip地址
+Vue.prototype.$backip = 'http://127.0.0.1:8080' // 指明后端ip地址
 
 router.beforeEach((to, from, next) => { // todo 鉴定如果没有登陆就跳转登录界面一直不成功
   Vue.prototype.$LoadingBar.start()
