@@ -29,6 +29,7 @@ router.beforeEach((to, from, next) => { // todo 鉴定如果没有登陆就跳�
   console.log(loginState)
   if (to.meta.requireAuth) { // 判断该路由是否需要登录权限
     if (loginState) { // 根据登录状态选择是否加载
+      console.log(loginState + '11')
       next()
     } else {
       next({// 需要登陆就登陆去

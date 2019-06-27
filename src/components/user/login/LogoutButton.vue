@@ -1,6 +1,6 @@
 <template>
   <div>
-  <Button type="primary" shape="circle" @click="modal1 = true">LogOut</Button>
+    <Button type="primary" shape="circle" @click="modal1 = true"><B style="font-size: 16px">LogOut</B></Button>
   <Modal
     v-model="modal1"
     title="确认注销: )"

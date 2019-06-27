@@ -11,7 +11,7 @@ export default {
 
 <style scoped>
 .full{
-  background-color:#ebf0f8;
+  background-color: #dbe0e8;
   /*background-color: #4d5279;*/
 }
 </style>

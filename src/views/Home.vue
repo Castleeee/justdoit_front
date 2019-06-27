@@ -39,11 +39,12 @@
             <!--首页渲染 -->
 
             <Col  span="3">
-              <Button  v-if="isLogin" fclass="button" type="primary" shape="circle"  to="/login">
-                <B class="buttontext">Sing in</B></Button>
-              <Button v-else class="button" type="primary" shape="circle"  to="/usercenter">
+              <Button v-if="isLogin" class="button" type="primary" shape="circle"  to="/usercenter">
                 <Icon size="20" type="md-person" style="margin-top: -8%"/>
                 <B class="buttontext">账户</B></Button>
+              <Button  v-else fclass="button" type="primary" shape="circle"  to="/login">
+                <B class="buttontext">Sing in</B></Button>
+
             </Col>
           </Row>
           <br/>
@@ -124,11 +125,11 @@
             <!--单词页渲染-->
 
             <Col span="3">
-              <Button  v-if="isLogin" fclass="button" type="primary" shape="circle"  to="/login">
-                <B class="buttontext">Sing in</B></Button>
-              <Button v-else class="button" type="primary" shape="circle"  to="/usercenter">
+              <Button v-if="isLogin" class="button" type="primary" shape="circle"  to="/usercenter">
                 <Icon size="20" type="md-person" style="margin-top: -8%"/>
-                <B class="buttontext">账户</B></Button></Col>
+                <B class="buttontext">账户</B></Button>
+              <Button v-else  fclass="button" type="primary" shape="circle"  to="/login">
+                <B class="buttontext">Sing in</B></Button></Col>
             <Col span="1"></Col>
           </Row>
           <br/>
@@ -214,11 +215,12 @@
             <!--todo页渲染-->
 
             <Col span="3">
-              <Button  v-if="isLogin" fclass="button" type="primary" shape="circle"  to="/login">
-                <B class="buttontext">Sing in</B></Button>
-              <Button v-else class="button" type="primary" shape="circle"  to="/usercenter">
+
+              <Button v-if="isLogin" class="button" type="primary" shape="circle"  to="/usercenter">
                 <Icon size="20" type="md-person" style="margin-top: -8%"/>
-                <B class="buttontext">账户</B></Button></Col>
+                <B class="buttontext">账户</B></Button>
+              <Button  v-else fclass="button" type="primary" shape="circle"  to="/login">
+                <B class="buttontext">Sing in</B></Button></Col>
             <Col span="1"></Col>
           </Row>
           <br/>
@@ -305,11 +307,12 @@
             <!--信息流页渲染-->
 
             <Col span="3">
-              <Button  v-if="isLogin" fclass="button" type="primary" shape="circle"  to="/login">
-                <B class="buttontext">Sing in</B></Button>
-              <Button v-else class="button" type="primary" shape="circle"  to="/usercenter">
+              <Button v-if="isLogin" class="button" type="primary" shape="circle"  to="/usercenter">
                 <Icon size="20" type="md-person" style="margin-top: -8%"/>
-                <B class="buttontext">账户</B></Button></Col>
+                <B class="buttontext">账户</B></Button>
+              <Button  v-else fclass="button" type="primary" shape="circle"  to="/login">
+                <B class="buttontext">Sing in</B></Button>
+              </Col>
             <Col span="1"></Col>
           </Row>
           <br/>
@@ -381,7 +384,7 @@ export default {
       isWordPage: false,
       isTodoPage: false,
       isInfoPage: false,
-      isLogin: sessionStorage.getItem('isLogin')// todo 从session中取出来，判断用户是否已经登陆了
+      isLogin: this.$store.state.isLogin// todo 从session中取出来，判断用户是否已经登陆了
     }
   },
   components: {

@@ -8,7 +8,8 @@ const REMOVE_COUNT = 'REMOVE_COUNT'
 
 export default new Vuex.Store({
   state: {
-
+    islogin: sessionStorage.getItem('isLogin'),
+    userid: window.sessionStorage.getItem('')
   },
 
   mutations: {
@@ -24,8 +25,8 @@ export default new Vuex.Store({
     },
     [REMOVE_COUNT] () { // 退出登录
       sessionStorage.removeItem('token')
-      sessionStorage.removeItem('id')
       sessionStorage.setItem('isLogin', false)// todo 清除token
+      sessionStorage.removeItem('id')
     }
 
   },

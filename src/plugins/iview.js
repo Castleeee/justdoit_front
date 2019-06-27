@@ -24,7 +24,9 @@ import {
   LoadingBar,
   Message,
   Alert,
-  Modal
+  Modal,
+  Dropdown,
+  DropdownItem
 } from 'iview'
 
 import 'iview/dist/styles/iview.css'
@@ -50,6 +52,8 @@ Vue.component('Row', Row)
 Vue.component('Col', Col)
 Vue.component('Modal', Modal)
 Vue.component('Tooltip', Tooltip)
+Vue.component('Dropdown', Dropdown)
+Vue.component('DropdownItem', DropdownItem)
 Vue.prototype.$Message = Message
 Vue.prototype.$Notice = Notice
 Vue.prototype.$LoadingBar = LoadingBar
